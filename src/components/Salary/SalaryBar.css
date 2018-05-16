@@ -20,6 +20,7 @@
     background-color: #1c3f94;
     border-radius: 0.4rem;
     color: #fff;
+    transition: margin-left 1.5s;
 }
 
 .graphTag {
@@ -33,6 +34,7 @@
     border-left: 0.5rem solid transparent;
     border-right: 0.5rem solid transparent;
     z-index: 1;
+    transition: left 1.5s;
 }
 
 .graphBar {
@@ -47,7 +49,7 @@
 .graphMin,
 .graphMax {
     flex: 1;
-    font-size: var(--font-size-small);
+    font-size: 1.2rem;
 }
 
 .graphMax {
@@ -57,17 +59,17 @@
 .graphLabel {
     display: block;
     font-size: 1.1rem;
-    color: #ccc;
+    color: #757575;
 }
 
 .minDetails {
-    font-size: var(--font-size-small);
+    font-size: 1.2rem;
 }
 
 .smallAverage {
     display: none;
     margin-bottom: 0;
-    font-size: var(--font-size-small);
+    font-size: 1.2rem;
     line-height: 1.3;
 }
 
