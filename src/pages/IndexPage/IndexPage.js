@@ -20,7 +20,6 @@ const IndexPage = () => {
 			<JobRequirements />
 			<JobDescription />
 			<AdditionalOptions />
-			<Sidebar />
 		</div>
 	);
 };
