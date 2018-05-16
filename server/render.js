@@ -31,13 +31,16 @@ export default ({ clientStats }) => (req, res) => {
       <html>
         <head>
           <meta charset="utf-8">
-					<title>react universal from scratch</title>
-					<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600" rel="stylesheet" type="text/css">
-					<link rel="stylesheet" href="https://dna.jsstatic.com/siva/siva-1.6.4.css">
-					<link rel="stylesheet" href="https://dna.jsstatic.com/siva/icon-font.css">
-					<link rel="stylesheet" href="https://dna.jsstatic.com/siva/select2.css">
-					<link rel="stylesheet" href="https://dna.jsstatic.com/siva/bootstrap-datepicker.min.css">
+					<title>SiVA Recruitment Centre</title>
+					<link rel="stylesheet" href="http://dna.jsstatic.com/siva/siva-1.6.4.css">
+					<link rel="stylesheet" href="http://dna.jsstatic.com/pi/icon-font/2.3/icon-font.css">
+					<link rel="stylesheet" href="http://dna.jsstatic.com/select2/select2.css">
+					<link rel="stylesheet" href="http://dna.jsstatic.com/css/bootstrap-datepicker.min.css">
 
+					<!-- Favicon -->
+					<link rel="icon" type="image/ico" href="https://sivastage.jobstreet.com/assets/img/favicon.ico">
+					<!-- End of Favicon -->
+				
 					${helmet.title.toString()}
 					${helmet.meta.toString()}
 					${helmet.link.toString()}
@@ -50,7 +53,79 @@ export default ({ clientStats }) => (req, res) => {
           <div id="root">${app}</div>
           ${cssHash}
           ${js}
-        </body>
+				</body>
+				<!--// JAVASCRIPT //-->
+				<script src="http://dna.jsstatic.com/js/jquery.js"></script>
+				<script src="http://dna.jsstatic.com/js/bootstrap.js"></script>
+				<script src="http://dna.jsstatic.com/js/siva.js"></script>
+				<script src="http://dna.jsstatic.com/select2/select2.js"></script>
+				<script src="http://dna.jsstatic.com/js/bootstrap-datepicker.min.js"></script>
+				<script>
+
+				$(function() {
+					$('.datepicker').datepicker();
+					$('select, .select2-salary, .select2-employment').select2();
+					$('[data-toggle="popover"]').popover();
+
+					// Show Intern Terms & Unpay when select Internship in Employment Type
+					$('.select2-employment').on("select2:select", function (e) {
+						if($(this).val() == 'intern') {
+							$('.internterm-checkbox').show();
+						}else {
+							$('.internterm-checkbox').hide();
+						}
+					});
+
+					$('#fieldInternUnpaySalary').click(function(event){
+							if(this.checked) {
+									$('.select2-salary, #minSalary, #maxSalary').prop("disabled", true);
+							}else{
+									$('.select2-salary, #minSalary, #maxSalary').prop("disabled", false);
+							}
+					});
+
+					//POST COUNTRY SELECTION
+					$("#postCountry .post-my").change(function() {
+						if(this.checked) {
+							$("#selected-my, #specificArea").show();
+							}
+						else if ((this.unchecked)) {
+							$("#selected-my, #specificArea").hide();
+						}
+						else {
+							$("#selected-my, #specificArea").hide();
+						}
+					});
+					$("#postCountry .post-sg").change(function() {
+						if(this.checked) {
+							$("#selected-sg").show();
+							}
+						else if ((this.unchecked)) {
+							$("#selected-sg").hide();
+						}
+						else {
+							$("#selected-sg").hide();
+						}
+					});
+
+					// Show SOL fields
+					$('#fieldBuySOL').click(function(event){
+							if(this.checked) {
+									$('#solSellingPoint, #solMsg').show();
+							}else{
+									$('#solSellingPoint, #solMsg').hide();
+							}
+					});
+
+					// Toggle Error Message
+					$('#toggleError').click(function(){
+						$('.form-group').toggleClass('has-error');
+						$('.help-block').toggleClass('show');
+					});
+
+				});
+				</script>
+
       </html>`
 	);
 };
