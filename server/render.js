@@ -47,6 +47,11 @@ export default ({ clientStats }) => (req, res) => {
 					${helmet.meta.toString()}
 					${helmet.link.toString()}
           ${styles}
+			<style>
+				.stickyTopBar {
+					padding: 10px 15px 10px 15px !important;
+				}
+			</style>
         </head>
         <body>
           <script>
@@ -61,7 +66,6 @@ export default ({ clientStats }) => (req, res) => {
 				<script src="http://dna.jsstatic.com/js/bootstrap.js"></script>
 				<script src="http://dna.jsstatic.com/js/siva.js"></script>
 				<script src="http://dna.jsstatic.com/js/bootstrap-datepicker.min.js"></script>
-				<link rel="stylesheet" href="https://unpkg.com/react-select@1.2.1/dist/react-select.css">
 				<script>
 
 				// $(function() {

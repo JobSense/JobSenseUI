@@ -62,7 +62,6 @@ export default class AdditionalOptions extends Component {
 								<div
 									className="form-group"
 									id="solSellingPoint"
-									style={{ display: 'none' }}
 								>
 									<div className="panel">
 										<div className="col-md-5 col-sm-6 sol-img hidden-sm hidden-xs">
@@ -117,7 +116,6 @@ export default class AdditionalOptions extends Component {
 							<div className="col-sm-10 col-sm-offset-1">
 								<div className="well well-sm">
 									<a
-										href="#"
 										data-toggle="collapse"
 										data-target="#addOption"
 										aria-expanded="false"
