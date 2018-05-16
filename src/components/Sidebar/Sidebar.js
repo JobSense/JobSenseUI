@@ -2,10 +2,24 @@ import React, { Component } from 'react';
 import styles from './Sidebar.css';
 
 export default class Sidebar extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			expanded: false,
+		};
+
+		this.handleExpand = this.handleExpand.bind(this);
+	}
+
+	handleExpand() {
+		this.setState({ expanded: !this.state.expanded });
+	}
+
 	render() {
 		return (
 			<div className={styles.container}>
-				<a href="#" className={styles.expandButton}>
+				<a href="#" className={styles.expandButton} onClick={this.handleExpand}>
 					{'<'}
 				</a>
 
