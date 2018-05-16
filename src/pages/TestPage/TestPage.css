@@ -1,2 +1,10 @@
 .container {
 }
+
+.SalaryBarContainer {
+  background-color: white;
+  padding: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
