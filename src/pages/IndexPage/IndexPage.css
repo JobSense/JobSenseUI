@@ -1,7 +1,4 @@
 .container {
-	background-color: var(--red-color);
-	width: 500px;
-	margin: auto;
 }
 .header {
 	font-size: var(--large-heading-text);
