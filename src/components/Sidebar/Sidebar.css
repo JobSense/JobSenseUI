@@ -9,14 +9,7 @@
 }
 
 .expandButton {
-    position: absolute;
-    top: 50%;
-    left: -28px;
-    background-color: #042747;
-    color: white;
-    font-size: 24px;
-    padding: 6px 12px 6px 12px;
-    border-radius: 15px 0px 0px 15px;
+    display: none;
 }
 
 .widgetContainer {
@@ -56,6 +49,18 @@
     flex: 0.5;
 }
 
+.widgetButton {
+    position: absolute;
+    bottom: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.widgetButton button {
+    width: 80%;
+}
+
 @media screen and (max-width:500px) {
     .container {
         position: fixed;
@@ -69,7 +74,7 @@
     .expandButton {
         position: absolute;
         left: 45%;
-        bottom: calc(-15% - 48px);
+        bottom: 0;
         transform: rotate(-90deg);
         background-color: #042747;
         color: white;
@@ -78,5 +83,52 @@
         border-radius: 15px 0px 0px 15px;
         display: flex;
         align-items: center;
+    }
+
+    .widgetContainer {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+    }
+    .widget {
+        background-color: #042747;
+        border-radius: 0px;
+        height: auto;
+        margin-top: 4px;
+
+        display: flex;
+        justify-content: center;
+        align-self: start;
+        flex-direction: column;
+        color: #fafafa;
+    }
+
+    .widgetTitle {
+        margin-top: 4px;
+        align-self: center;
+        flex: 1;
+        font-size: 12px;
+    }
+
+    .widgetSubtitle {
+        margin-top: 4px;
+        align-self: center;
+        flex: 0.5;
+        font-size: 10px;
+
+    }
+    .widgetDescription {
+        margin-top: 4px;
+        align-self: center;
+        flex: 0.5;
+        font-size: 10px;
+    }
+
+    .widgetButton {
+        position: absolute;
+        bottom: 6px;
+        width: 100%;
+        justify-content: center;
+        display: none;
     }
 }

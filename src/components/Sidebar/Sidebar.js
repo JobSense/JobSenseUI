@@ -41,6 +41,17 @@ export default class Sidebar extends Component {
 					<div className={styles.widget}>
 						<div className={styles.widgetTitle}>Salary Benchmark</div>
 					</div>
+
+					<div className={styles.widgetButton}>
+						<button
+							type="button"
+							className="btn btn-primary"
+							data-toggle="modal"
+							data-target="#disputableKeywordModal"
+						>
+							Preview
+						</button>
+					</div>
 				</div>
 			</div>
 		);

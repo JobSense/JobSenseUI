@@ -1,4 +1,11 @@
-.container {}
+.container {
+    width: 70%;
+    margin-left: 5%;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
 .header {
 	font-size: var(--large-heading-text);
 }
@@ -9,6 +16,8 @@
 
 @media screen and (max-width:500px) {
 	.container {
-		margin-top: 15%
-	}
+		margin-top: 15%;
+        width: 100%;
+        margin-left: 0%;
+    }
 }
