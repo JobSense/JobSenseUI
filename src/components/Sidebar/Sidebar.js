@@ -17,13 +17,14 @@ export default class Sidebar extends Component {
 	}
 
 	render() {
+		const { expanded } = this.state;
 		return (
 			<div className={styles.container}>
-				<a href="#" className={styles.expandButton} onClick={this.handleExpand}>
-					{'<'}
+				<a href="#" className={expanded ? styles.closeButton : styles.expandButton} onClick={this.handleExpand}>
+					{expanded ? 'X' : '<'}
 				</a>
 
-				<div className={styles.widgetContainer}>
+				<div className={expanded ? styles.expandedContainer : styles.widgetContainer}>
 					<div className={styles.widget}>
 						<div className={styles.widgetTitle}>Talent Pool</div>
 						<div className={styles.widgetSubtitle}>
