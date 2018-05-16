@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Header.css';
 
 const Header = () => (
-	<div className="navbar navbar-default navbar-static">
-		<div className="container">
+	<div className={`${styles.selfNavBar} navbar navbar-default navbar-static`}>
+		<div className={`${styles.selfContainer} container`}>
 			<div className="navbar-header">
 				<button
 					type="button"
