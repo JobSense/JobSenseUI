@@ -8,7 +8,7 @@ export default class JobDetails extends Component {
 				<div className={'panel form'}>
                     <br/>
                     <div className="panel-body">
-                        <div class="col-sm-10 col-sm-offset-1">
+                        <div className="col-sm-10 col-sm-offset-1">
 					<h4 style={{ textDecoration: 'none' }}>Job Details</h4>
 					<hr />
 
