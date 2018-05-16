@@ -61,7 +61,6 @@ export default ({ clientStats }) => (req, res) => {
 				<script src="http://dna.jsstatic.com/js/bootstrap.js"></script>
 				<script src="http://dna.jsstatic.com/js/siva.js"></script>
 				<script src="http://dna.jsstatic.com/js/bootstrap-datepicker.min.js"></script>
-				<link rel="stylesheet" href="https://unpkg.com/react-select@1.2.1/dist/react-select.css">
 				<script>
 
 				// $(function() {
