@@ -1,17 +1,17 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js lint --fix .\server\
+  /Users/jason.foo/.nvm/versions/node/v8.11.1/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js start
 
 PATH: 
-  C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\PuTTY\;C:\Users\tayzhengyu\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Amazon\AWSCLI\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\Users\tayzhengyu\AppData\Local\Android\Sdk\platform-tools;C:\Users\tayzhengyu\AppData\Local\Android\Sdk\emulator;C:\Ruby25-x64\bin;C:\Users\tayzhengyu\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\tayzhengyu\AppData\Roaming\npm;C:\Users\tayzhengyu\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\tayzhengyu\Downloads\nano-0.6829.bc713c1d\i686-w64-mingw32\bin;C:\Program Files\Git\bin;C:\Program Files\Git\usr\bin;C:\windows\system32;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Users\tayzhengyu\AppData\Local\Yarn\bin;C:\Program Files\Docker Toolbox
+  /Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/jason.foo/.nvm/versions/node/v8.11.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  8.6.0
+  8.11.1
 
 Platform: 
-  win32 x64
+  darwin x64
 
 npm manifest: 
   {
@@ -6760,16 +6760,16 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 1
-  Command: C:\Windows\system32\cmd.exe
-  Arguments: /d /s /c eslint --fix .\server\
-  Directory: C:\Projects\ssr-react
+  Exit code: 127
+  Command: sh
+  Arguments: -c cross-env NODE_ENV=development node server/index.js
+  Directory: /Users/jason.foo/Documents/github/JobSenseUI
   Output:
   
-      at ProcessTermError.MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
-      at new ProcessTermError (C:\Program Files (x86)\Yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:30281:17)
-      at emitTwo (events.js:125:13)
-      at ChildProcess.emit (events.js:213:7)
-      at maybeClose (internal/child_process.js:927:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

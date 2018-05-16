@@ -9,10 +9,12 @@ import JobDescription from '../../components/JobDescription/JobDescription';
 import AdditionalOptions from '../../components/AdditionalOptions/AdditionalOptions';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import PreviewHeader from '../../components/PreviewHeader/PreviewHeader';
+import TalentPoolChart from '../../components/TalentPoolChart/TalentPoolChart';
 
 const IndexPage = () => {
 	return (
 		<div className={styles.container}>
+			<TalentPoolChart />
 			<PreviewHeader />
 			<JobDetails />
 			<JobRequirements />
