@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styles from './IndexPage.css';
 import { withRouter } from 'react-router-dom';
 
@@ -12,22 +12,51 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import PreviewHeader from '../../components/PreviewHeader/PreviewHeader';
 import TalentPoolChart from '../../components/TalentPoolChart/TalentPoolChart';
 
-const IndexPage = () => {
+const AppContext = React.createContext('value');
+const DataConsumer = ({ children }) => {
 	return (
-		<Fragment>
-			<div className={styles.container}>
-			<Header />
-				<div className={styles.formContainer}>
-						<PreviewHeader />
-						<JobDetails />
-						<JobRequirements />
-						<JobDescription />
-						<AdditionalOptions />
-				</div>
-			</div>
-			<Sidebar />
-		</Fragment>
+		<AppContext.Consumer>
+			{({ values, onChange }) => {
+				return React.Children.map(children, child =>
+					React.cloneElement(child, { values, onChange })
+				);
+			}}
+		</AppContext.Consumer>
 	);
 };
+DataConsumer.propTypes = {
+	children: PropTypes.any,
+};
+
+class IndexPage extends React.Component {
+	state = {
+		values: {
+			minSalary: 0,
+			maxSalary: 0,
+		},
+		onChange: (name, value) => {
+			this.setState({ values: { ...this.state.values, [name]: value } });
+		},
+	};
+	render() {
+		return (
+			<AppContext.Provider value={this.state}>
+				<div className={styles.container}>
+					<Header />
+					<div className={styles.formContainer}>
+						<DataConsumer>
+							<PreviewHeader />
+							<JobDetails />
+							<JobRequirements />
+							<JobDescription />
+							<AdditionalOptions />
+						</DataConsumer>
+					</div>
+				</div>
+				<Sidebar />
+			</AppContext.Provider>
+		);
+	}
+}
 
 export default withRouter(IndexPage);

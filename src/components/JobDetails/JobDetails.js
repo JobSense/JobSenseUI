@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './JobDetails.css';
 import SalaryBar from '../Salary/SalaryBar';
 import Select from '../Select/Select';
@@ -7,27 +8,23 @@ import * as constants from './constants';
 export default class JobDetails extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			minSalary: 0,
-			maxSalary: 0,
-		};
 	}
 
+	static propTypes = {
+		values: PropTypes.object,
+		onChange: PropTypes.func,
+	};
+
 	salaryChangeMin = e => {
-		this.setState({
-			minSalary: parseInt(e.target.value),
-		});
+		this.props.onChange('minSalary', parseInt(e.target.value));
 	};
 
 	salaryChangeMax = e => {
-		this.setState({
-			maxSalary: parseInt(e.target.value),
-		});
+		this.props.onChange('maxSalary', parseInt(e.target.value));
 	};
 
 	render() {
-		const { minSalary, maxSalary } = this.state;
+		const { minSalary, maxSalary } = this.props.values;
 		const averageSalaryInput = Math.floor((minSalary + maxSalary) / 2);
 		return (
 			<form action="#" className="form-horizontal">
