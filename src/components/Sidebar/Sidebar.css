@@ -63,18 +63,19 @@
 
 @media screen and (max-width:500px) {
     .container {
-        position: fixed;
-        top: 0;
+        position: initial;
+        top: 0px;
         width: 100%;
-        height: 15%;
+        height: auto;
         background-color: #042747;
         display: flex;
+        z-index: 5;
     }
 
     .expandButton {
         position: absolute;
         left: 45%;
-        bottom: 0;
+        bottom: -36px;
         transform: rotate(-90deg);
         background-color: #042747;
         color: white;

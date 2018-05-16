@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './JobDetails.css';
 import SalaryBar from '../Salary/SalaryBar';
+import Select from '../Select/Select';
+import * as constants from './constants';
 
 export default class JobDetails extends Component {
 	constructor(props) {
@@ -65,75 +67,10 @@ export default class JobDetails extends Component {
 										Employment Type<span className="text-danger">*</span>
 									</label>
 									<div className="col-sm-10">
-										<select
-											name="employment_type"
-											id="fieldEmploymentType"
-											className="form-control select2-employment"
-											tabIndex="-1"
-											style={{ display: 'none' }}
-										>
-											<option value="default">-Employment Type-</option>
-											<option value="contract">Contract</option>
-											<option value="full">Full-Time</option>
-											<option value="intern">Internship</option>
-											<option value="part">Part-Time</option>
-											<option value="temporary">Temporary</option>
-										</select>
-										<span
-											className="select2 select2-container select2-container--default"
-											dir="ltr"
-											style={{ width: '100%' }}
-										>
-											<span className="selection">
-												<span
-													className="select2-selection select2-selection--single"
-													tabIndex="0"
-													role="combobox"
-													aria-autocomplete="list"
-													aria-haspopup="true"
-													aria-expanded="false"
-													aria-owns="select2-fieldEmploymentType-results"
-													aria-labelledby="select2-fieldEmploymentType-container"
-												>
-													<span
-														className="select2-selection__rendered"
-														id="select2-fieldEmploymentType-container"
-													>
-														-Employment Type-
-													</span>
-													<span
-														className="select2-selection__arrow"
-														role="presentation"
-													>
-														<b role="presentation" />
-													</span>
-												</span>
-											</span>
-											<span className="dropdown-wrapper" aria-hidden="true" />
-										</span>
-										<span className="help-block" style={{ display: 'none' }}>
-											Please select the Employment Type
-										</span>
-										<div
-											className="internterm-checkbox"
-											style={{ display: 'none' }}
-										>
-											<label>
-												<input
-													id="fieldInternshipTermFlag"
-													type="checkbox"
-													name="internship_terms"
-												/>
-												<span>I have read and hereby agree to the </span>
-												<a
-													href="#"
-													data-toggle="modal"
-													data-target="#internTerms"
-												>
-													Terms
-												</a>
-											</label>
-										</div>
+										<Select
+											placeholder="-Employment Type-"
+											options={constants.employmentType}
+										/>
 									</div>
 								</div>
 
@@ -145,55 +82,10 @@ export default class JobDetails extends Component {
 										Position Level<span className="text-danger">*</span>
 									</label>
 									<div className="col-sm-10">
-										<select
-											name="position_level"
-											id="fieldPositionLevel"
-											className="form-control select2"
-											tabIndex="-1"
-											style={{ display: 'none' }}
-										>
-											<option value="default">-Position Level-</option>
-											<option value="sm">Senior Manager</option>
-											<option value="mn">Manager</option>
-											<option value="se">Senior Executive</option>
-											<option value="el">Entry Level</option>
-											<option value="ne">Non-Executive</option>
-										</select>
-										<span
-											className="select2 select2-container select2-container--default"
-											dir="ltr"
-											style={{ width: '100%' }}
-										>
-											<span className="selection">
-												<span
-													className="select2-selection select2-selection--single"
-													tabIndex="0"
-													role="combobox"
-													aria-autocomplete="list"
-													aria-haspopup="true"
-													aria-expanded="false"
-													aria-owns="select2-fieldPositionLevel-results"
-													aria-labelledby="select2-fieldPositionLevel-container"
-												>
-													<span
-														className="select2-selection__rendered"
-														id="select2-fieldPositionLevel-container"
-													>
-														-Position Level-
-													</span>
-													<span
-														className="select2-selection__arrow"
-														role="presentation"
-													>
-														<b role="presentation" />
-													</span>
-												</span>
-											</span>
-											<span className="dropdown-wrapper" aria-hidden="true" />
-										</span>
-										<span className="help-block" style={{ display: 'none' }}>
-											Please select the Position Level
-										</span>
+										<Select
+											placeholder="-Position Level-"
+											options={constants.employmentType}
+										/>
 									</div>
 								</div>
 
@@ -205,58 +97,10 @@ export default class JobDetails extends Component {
 										Job Specialization<span className="text-danger">*</span>
 									</label>
 									<div className="col-sm-10">
-										<select
-											name="job_specialization"
-											id="fieldJobSpecialization"
-											className="form-control select2"
-											tabIndex="-1"
-											style={{ display: 'none' }}
-										>
-											<option value="default">-Job Specialization-</option>
-											<option value="as">Actuarial Science/Statistics</option>
-											<option value="hd">Healthcare - Doctor/Diagnosis</option>
-											<option value="th">IT/Computer - Hardware</option>
-											<option value="ts">IT/Computer - Software</option>
-											<option value="pe">
-												Public Relations/Communications
-											</option>
-											<option value="etc">Etc...</option>
-										</select>
-										<span
-											className="select2 select2-container select2-container--default"
-											dir="ltr"
-											style={{ width: '100%' }}
-										>
-											<span className="selection">
-												<span
-													className="select2-selection select2-selection--single"
-													tabIndex="0"
-													role="combobox"
-													aria-autocomplete="list"
-													aria-haspopup="true"
-													aria-expanded="false"
-													aria-owns="select2-fieldJobSpecialization-results"
-													aria-labelledby="select2-fieldJobSpecialization-container"
-												>
-													<span
-														className="select2-selection__rendered"
-														id="select2-fieldJobSpecialization-container"
-													>
-														-Job Specialization-
-													</span>
-													<span
-														className="select2-selection__arrow"
-														role="presentation"
-													>
-														<b role="presentation" />
-													</span>
-												</span>
-											</span>
-											<span className="dropdown-wrapper" aria-hidden="true" />
-										</span>
-										<span className="help-block" style={{ display: 'none' }}>
-											Please select the Specialization
-										</span>
+										<Select
+											placeholder="-Job Specialization-"
+											options={constants.jobSpecialization}
+										/>
 									</div>
 								</div>
 
@@ -433,6 +277,9 @@ export default class JobDetails extends Component {
 										<span className="help-block" style={{ display: 'none' }}>
 											Please select the Work Location
 										</span>
+										<span className="help-block" style={{ display: 'none' }}>
+											Please select the Position Level
+										</span>
 									</div>
 								</div>
 
@@ -515,6 +362,9 @@ export default class JobDetails extends Component {
 												</span>
 											</span>
 											<span className="dropdown-wrapper" aria-hidden="true" />
+										</span>
+										<span className="help-block" style={{ display: 'none' }}>
+											Please select the Specialization
 										</span>
 									</div>
 									<div className="col-sm-3 col-xs-12">

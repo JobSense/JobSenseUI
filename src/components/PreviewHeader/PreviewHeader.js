@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import styles from './PreviewHeader.css';
 
+import Sidebar from '../../components/Sidebar/Sidebar';
+
 export default class PreviewHeader extends Component {
 	render() {
 		return (
-			<div className='panel topbar stickyEdit'>
-				<div className="panel-body">
+			<div className="panel topbar stickyEdit">
+				<div className="panel-body stickyTopBar">
 					<div className="topbar-heading">
 						<div className="topbar-title">
 							<h1>Create/ Edit Job Ad</h1>
@@ -33,6 +35,7 @@ export default class PreviewHeader extends Component {
 						</button>
 					</div>
 				</div>
+                <Sidebar />
 			</div>
 		);
 	}
