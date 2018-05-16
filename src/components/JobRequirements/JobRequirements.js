@@ -68,7 +68,7 @@ export default class JobDetails extends Component {
 																tabIndex="-1"
 																role="textbox"
 																placeholder=""
-																style={{ width: '0.75em;' }}
+																style={{ width: '0.75em' }}
 															/>
 														</li>
 													</ul>
@@ -130,7 +130,7 @@ export default class JobDetails extends Component {
 																tabIndex="-1"
 																role="textbox"
 																placeholder=""
-																style={{ width: '0.75em;' }}
+																style={{ width: '0.75em' }}
 															/>
 														</li>
 													</ul>
@@ -251,7 +251,7 @@ export default class JobDetails extends Component {
 																tabIndex="-1"
 																role="textbox"
 																placeholder=""
-																style={{ width: '0.75em;' }}
+																style={{ width: '0.75em' }}
 															/>
 														</li>
 													</ul>
