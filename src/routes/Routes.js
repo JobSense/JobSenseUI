@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router';
 import App from '../components/AppContainer/AppContainer';
 import IndexPage from '../pages/IndexPage/IndexPage';
 import TestPage from 'pages/TestPage/TestPage';
+import '!css-loader!../thirdParty.css';
+import '!css-loader!../thirdParty.css';
 
 class Routes extends Component {
 	render() {
