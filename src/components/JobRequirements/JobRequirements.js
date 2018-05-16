@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import styles from './JobRequirements.css';
+import Select from '../Select/Select';
+import { educations } from './constants';
 
 export default class JobDetails extends Component {
 	render() {
 		return (
 			<form action="#" className="form-horizontal">
+				<Select
+					placeholder={'-Please select the Education Level-'}
+					options={educations}
+				/>
 				<div className="panel form">
 					<br />
 					<div className="panel-body">
@@ -24,7 +30,7 @@ export default class JobDetails extends Component {
 											name="education_level"
 											id="fieldEducationLevel"
 											className="form-control select2"
-											multiple=""
+											multiple
 											tabIndex="-1"
 											style={{ display: 'none' }}
 										>

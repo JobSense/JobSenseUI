@@ -60,72 +60,72 @@ export default ({ clientStats }) => (req, res) => {
 				<script src="http://dna.jsstatic.com/js/jquery.js"></script>
 				<script src="http://dna.jsstatic.com/js/bootstrap.js"></script>
 				<script src="http://dna.jsstatic.com/js/siva.js"></script>
-				<script src="http://dna.jsstatic.com/select2/select2.js"></script>
 				<script src="http://dna.jsstatic.com/js/bootstrap-datepicker.min.js"></script>
+				<link rel="stylesheet" href="https://unpkg.com/react-select@1.2.1/dist/react-select.css">
 				<script>
 
-				$(function() {
-					$('.datepicker').datepicker();
-					$('select, .select2-salary, .select2-employment').select2();
-					$('[data-toggle="popover"]').popover();
+				// $(function() {
+				// 	$('.datepicker').datepicker();
+				// 	$('select, .select2-salary, .select2-employment').select2();
+				// 	$('[data-toggle="popover"]').popover();
 
-					// Show Intern Terms & Unpay when select Internship in Employment Type
-					$('.select2-employment').on("select2:select", function (e) {
-						if($(this).val() == 'intern') {
-							$('.internterm-checkbox').show();
-						}else {
-							$('.internterm-checkbox').hide();
-						}
-					});
+				// 	// Show Intern Terms & Unpay when select Internship in Employment Type
+				// 	$('.select2-employment').on("select2:select", function (e) {
+				// 		if($(this).val() == 'intern') {
+				// 			$('.internterm-checkbox').show();
+				// 		}else {
+				// 			$('.internterm-checkbox').hide();
+				// 		}
+				// 	});
 
-					$('#fieldInternUnpaySalary').click(function(event){
-							if(this.checked) {
-									$('.select2-salary, #minSalary, #maxSalary').prop("disabled", true);
-							}else{
-									$('.select2-salary, #minSalary, #maxSalary').prop("disabled", false);
-							}
-					});
+				// 	$('#fieldInternUnpaySalary').click(function(event){
+				// 			if(this.checked) {
+				// 					$('.select2-salary, #minSalary, #maxSalary').prop("disabled", true);
+				// 			}else{
+				// 					$('.select2-salary, #minSalary, #maxSalary').prop("disabled", false);
+				// 			}
+				// 	});
 
-					//POST COUNTRY SELECTION
-					$("#postCountry .post-my").change(function() {
-						if(this.checked) {
-							$("#selected-my, #specificArea").show();
-							}
-						else if ((this.unchecked)) {
-							$("#selected-my, #specificArea").hide();
-						}
-						else {
-							$("#selected-my, #specificArea").hide();
-						}
-					});
-					$("#postCountry .post-sg").change(function() {
-						if(this.checked) {
-							$("#selected-sg").show();
-							}
-						else if ((this.unchecked)) {
-							$("#selected-sg").hide();
-						}
-						else {
-							$("#selected-sg").hide();
-						}
-					});
+				// 	//POST COUNTRY SELECTION
+				// 	$("#postCountry .post-my").change(function() {
+				// 		if(this.checked) {
+				// 			$("#selected-my, #specificArea").show();
+				// 			}
+				// 		else if ((this.unchecked)) {
+				// 			$("#selected-my, #specificArea").hide();
+				// 		}
+				// 		else {
+				// 			$("#selected-my, #specificArea").hide();
+				// 		}
+				// 	});
+				// 	$("#postCountry .post-sg").change(function() {
+				// 		if(this.checked) {
+				// 			$("#selected-sg").show();
+				// 			}
+				// 		else if ((this.unchecked)) {
+				// 			$("#selected-sg").hide();
+				// 		}
+				// 		else {
+				// 			$("#selected-sg").hide();
+				// 		}
+				// 	});
 
-					// Show SOL fields
-					$('#fieldBuySOL').click(function(event){
-							if(this.checked) {
-									$('#solSellingPoint, #solMsg').show();
-							}else{
-									$('#solSellingPoint, #solMsg').hide();
-							}
-					});
+				// 	// Show SOL fields
+				// 	$('#fieldBuySOL').click(function(event){
+				// 			if(this.checked) {
+				// 					$('#solSellingPoint, #solMsg').show();
+				// 			}else{
+				// 					$('#solSellingPoint, #solMsg').hide();
+				// 			}
+				// 	});
 
-					// Toggle Error Message
-					$('#toggleError').click(function(){
-						$('.form-group').toggleClass('has-error');
-						$('.help-block').toggleClass('show');
-					});
+				// 	// Toggle Error Message
+				// 	$('#toggleError').click(function(){
+				// 		$('.form-group').toggleClass('has-error');
+				// 		$('.help-block').toggleClass('show');
+				// 	});
 
-				});
+				// });
 				</script>
 
       </html>`
