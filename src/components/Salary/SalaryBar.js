@@ -8,7 +8,7 @@ class SalaryBar extends Component {
 	}
 
 	render() {
-		const { averageSalary, averageSalaryInput } = this.props;
+		const { averageSalary, averageSalaryInput, currency } = this.props;
 		const graphWidth = '11.5rem'; // From CSS
 		const averageScale =
 			(averageSalaryInput - averageSalary.min) /
@@ -20,21 +20,38 @@ class SalaryBar extends Component {
 		return (
 			<div>
 				<div className={styles.graphDetails}>
-					<div className={styles.graphAverage} style={{ marginLeft: graphPos }}>
-						AVG MYR {averageSalaryInput}
-						<span className={styles.graphTag} style={{ left: tagPos }} />
-					</div>
+					{averageSalaryInput < averageSalary.min ||
+					averageSalaryInput > averageSalary.max ? (
+						<div
+							className={styles.graphAverage}
+							style={{ marginLeft: graphPos, backgroundColor: 'red' }}
+						>
+							AVG {currency} {averageSalaryInput}
+							<span
+								className={styles.graphTag}
+								style={{ left: tagPos, borderTopColor: 'red' }}
+							/>
+						</div>
+					) : (
+						<div
+							className={styles.graphAverage}
+							style={{ marginLeft: graphPos }}
+						>
+							AVG {currency} {averageSalaryInput}
+							<span className={styles.graphTag} style={{ left: tagPos }} />
+						</div>
+					)}
 
 					<span className={styles.graphBar} />
 
 					<div className={styles.graphMin}>
 						<span className={styles.graphLabel}>MIN</span>
-						MYR {averageSalary.min}
+						{currency} {averageSalary.min}
 					</div>
 
 					<div className={styles.graphMax}>
 						<span className={styles.graphLabel}>MAX</span>
-						MYR {averageSalary.max}
+						{currency} {averageSalary.max}
 					</div>
 				</div>
 			</div>
@@ -45,6 +62,7 @@ class SalaryBar extends Component {
 SalaryBar.propTypes = {
 	averageSalary: PropTypes.object.isRequired,
 	averageSalaryInput: PropTypes.number.isRequired,
+	currency: PropTypes.string.isRequired,
 };
 
 SalaryBar.defaultProps = {
@@ -52,6 +70,7 @@ SalaryBar.defaultProps = {
 		min: 2000,
 		max: 5000,
 	},
+	currency: 'AUD',
 };
 
 export default SalaryBar;

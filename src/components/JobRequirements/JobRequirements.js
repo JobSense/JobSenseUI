@@ -280,6 +280,25 @@ export default class JobDetails extends Component {
 													+Language
 												</a>
 											</div>
+
+											<div
+												className="modal fade"
+												id="langInfoModal"
+												role="dialog"
+												aria-hidden="true"
+											>
+												<div className="modal-dialog" role="document">
+													<div
+														className={`modal-content ${styles.languageModal}`}
+													>
+														<h3>Language(s)</h3>
+														<p>
+															Optional requirements for candidate. Select
+															maximum 4.
+														</p>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
