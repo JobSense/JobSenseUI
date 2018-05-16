@@ -47,6 +47,11 @@ export default ({ clientStats }) => (req, res) => {
 					${helmet.meta.toString()}
 					${helmet.link.toString()}
           ${styles}
+			<style>
+				.stickyTopBar {
+					padding: 10px 15px 10px 15px !important;
+				}
+			</style>
         </head>
         <body>
           <script>
