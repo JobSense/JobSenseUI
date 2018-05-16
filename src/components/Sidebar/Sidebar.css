@@ -1,3 +1,57 @@
 .container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #042747;
+    display: flex;
+}
 
+.expandButton {
+    position: absolute;
+    top: 50%;
+    left: -28px;
+    background-color: #042747;
+    color: white;
+    font-size: 24px;
+    padding: 6px 12px 6px 12px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.widgetContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.widget {
+    background-color: #063966;
+    border-radius: 10px;
+    width: 80%;
+    height: 120px;
+    margin-top: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    color: #fafafa;
+
+}
+
+.widgetTitle {
+    margin-top: 4px;
+    align-self: center;
+    flex: 1;
+}
+
+.widgetSubtitle {
+    margin-top: 24px;
+    align-self: center;
+    flex: 0.5;
+}
+.widgetDescription {
+    margin-top: 4px;
+    align-self: center;
+    flex: 0.5;
 }

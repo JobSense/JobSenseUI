@@ -40,6 +40,8 @@ export default ({ clientStats }) => (req, res) => {
 					<!-- Favicon -->
 					<link rel="icon" type="image/ico" href="https://sivastage.jobstreet.com/assets/img/favicon.ico">
 					<!-- End of Favicon -->
+					
+					<meta name="viewport" content="width=device-width,initial-scale=1.0">
 				
 					${helmet.title.toString()}
 					${helmet.meta.toString()}
