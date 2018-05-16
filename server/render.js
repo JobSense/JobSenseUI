@@ -33,6 +33,11 @@ export default ({ clientStats }) => (req, res) => {
           <meta charset="utf-8">
 					<title>react universal from scratch</title>
 					<link href="https://fonts.googleapis.com/css?family=Muli:300,400,600" rel="stylesheet" type="text/css">
+					<link rel="stylesheet" href="https://dna.jsstatic.com/siva/siva-1.6.4.css">
+					<link rel="stylesheet" href="https://dna.jsstatic.com/siva/icon-font.css">
+					<link rel="stylesheet" href="https://dna.jsstatic.com/siva/select2.css">
+					<link rel="stylesheet" href="https://dna.jsstatic.com/siva/bootstrap-datepicker.min.css">
+
 					${helmet.title.toString()}
 					${helmet.meta.toString()}
 					${helmet.link.toString()}
