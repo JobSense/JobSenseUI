@@ -20,6 +20,7 @@
     background-color: #1c3f94;
     border-radius: 0.4rem;
     color: #fff;
+    transition: margin-left 1.5s;
 }
 
 .graphTag {

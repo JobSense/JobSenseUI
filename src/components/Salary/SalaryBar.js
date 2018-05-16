@@ -5,39 +5,37 @@ import styles from './SalaryBar.css';
 class SalaryBar extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			// isOpen: false,
-		};
 	}
 
 	render() {
-		const { averageSalary } = this.props;
+		const { averageSalary, averageSalaryInput } = this.props;
 		const graphWidth = '11.5rem'; // From CSS
 		const averageScale =
-			(averageSalary.average - averageSalary.min) /
+			(averageSalaryInput - averageSalary.min) /
 			(averageSalary.max - averageSalary.min);
 		const graphClamped = Math.min(Math.max(0, averageScale), 1);
 		const graphPos = `calc(${graphClamped *
 			100}% - (${graphWidth} * ${graphClamped}))`;
 		const tagPos = `${graphClamped * 100}%`;
 		return (
-			<div className={styles.graphDetails}>
-				<div className={styles.graphAverage} style={{ marginLeft: graphPos }}>
-					AVG MYR {averageSalary.average}
-					<span className={styles.graphTag} style={{ left: tagPos }} />
-				</div>
+			<div>
+				<div className={styles.graphDetails}>
+					<div className={styles.graphAverage} style={{ marginLeft: graphPos }}>
+						AVG MYR {averageSalaryInput}
+						<span className={styles.graphTag} style={{ left: tagPos }} />
+					</div>
 
-				<span className={styles.graphBar} />
+					<span className={styles.graphBar} />
 
-				<div className={styles.graphMin}>
-					<span className={styles.graphLabel}>MIN</span>
-					MYR {averageSalary.min}
-				</div>
+					<div className={styles.graphMin}>
+						<span className={styles.graphLabel}>MIN</span>
+						MYR {averageSalary.min}
+					</div>
 
-				<div className={styles.graphMax}>
-					<span className={styles.graphLabel}>MAX</span>
-					MYR {averageSalary.max}
+					<div className={styles.graphMax}>
+						<span className={styles.graphLabel}>MAX</span>
+						MYR {averageSalary.max}
+					</div>
 				</div>
 			</div>
 		);
@@ -46,13 +44,13 @@ class SalaryBar extends Component {
 
 SalaryBar.propTypes = {
 	averageSalary: PropTypes.object.isRequired,
+	averageSalaryInput: PropTypes.number.isRequired,
 };
 
 SalaryBar.defaultProps = {
 	averageSalary: {
 		min: 2000,
 		max: 5000,
-		average: 4000,
 	},
 };
 
