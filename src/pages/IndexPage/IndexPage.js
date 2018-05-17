@@ -11,7 +11,6 @@ import AdditionalOptions from '../../components/AdditionalOptions/AdditionalOpti
 import Sidebar from '../../components/Sidebar/Sidebar';
 import PreviewHeader from '../../components/PreviewHeader/PreviewHeader';
 import TalentPoolChart from '../../components/TalentPoolChart/TalentPoolChart';
-import EngagementChart from '../../components/EngagementChart/EngagementChart';
 
 const AppContext = React.createContext('value');
 const DataConsumer = ({ children }) => {
