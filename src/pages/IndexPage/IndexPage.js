@@ -122,7 +122,7 @@ class IndexPage extends React.Component {
 								method: 'POST',
 								body: JSON.stringify({ ...this.state.values }),
 								headers: {
-									// 'Access-Control-Allow-Origin': '*',
+									'Access-Control-Allow-Origin': '*',
 									Accept: 'application/json',
 									'Content-Type': 'application/json',
 								},
