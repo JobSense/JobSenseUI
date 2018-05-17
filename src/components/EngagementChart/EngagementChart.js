@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './TalentPoolChart.css';
+import styles from './EngagementChart.css';
 
-class TalentPoolChart extends Component {
+class EngagementChart extends Component {
 	render() {
 		const { data } = this.props;
 		const talentPoolAveragePercentage = (data.average * 180 / data.max) - 90;
@@ -11,12 +11,16 @@ class TalentPoolChart extends Component {
 		return (
 			<div className={styles.container}>
 				<div className={styles.chart}>
-					<div className={styles.semicircle} />
-					<div style={{transform: rotateNumber}} className={styles.pointer} />
-					<div className={styles.pointerDot} />
+					<div className={styles.labelTitle}>{data.label}</div>
+					<div className={styles.bar}>
+						<div className={styles.barInner} />
+						<div style={{maxWidth: '40%'}} className={styles.barOuter}>
+							<span className={styles.value}>60%</span>
+						</div>
+					</div>
 					<div className={styles.rangeValueContainer}>
-						<span className={styles.minNumber}>{data.min}</span>
-						<span className={styles.maxNumber}>{data.max}</span>
+						<span>{data.min}</span>
+						<span>{data.max}</span>
 					</div>
 				</div>
 			</div>
@@ -24,8 +28,8 @@ class TalentPoolChart extends Component {
 	}
 }
 
-TalentPoolChart.propTypes = {
+EngagementChart.propTypes = {
 	data: PropTypes.object.isRequired,
 };
 
-export default TalentPoolChart;
+export default EngagementChart;

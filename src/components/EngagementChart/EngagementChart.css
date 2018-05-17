@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 14px;
+}
+
+.labelTitle {
+    font-size: 12px;
+}
+
+.chart {
+    padding-bottom: 10px;
+    width: 200px;
+    z-index: 9;
+}
+
+.bar{
+    height: 30px;
+    max-width: 800px;
+    line-height: 30px;
+    color: white;
+    padding: 0 0 0 10px;
+    position: relative;
+}
+
+.barInner {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 30px;
+    top: 0;
+    z-index: -2;
+    background: #ecf0f1;
+}
+
+.barOuter {
+    content: '';
+    background: #2ecc71;
+    max-width: 0;
+    height: 30px;
+    transition: 0.5s;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.value {
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.rangeValueContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
