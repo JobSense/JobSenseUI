@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import styles from './JobDetails.css';
 import SalaryBar from '../Salary/SalaryBar';
 import Select from '../Select/Select';
+import CreatableSelect from '../CreatableSelect/CreatableSelect';
 import * as constants from './constants';
 
 export default class JobDetails extends Component {
-	constructor(props) {
-		super(props);
-	}
+	state = {
+		malaysia: false,
+	};
 
 	static propTypes = {
 		values: PropTypes.object,
@@ -25,6 +26,7 @@ export default class JobDetails extends Component {
 
 	render() {
 		const { minSalary, maxSalary } = this.props.values;
+		const { malaysia } = this.state;
 		const averageSalaryInput = Math.floor((minSalary + maxSalary) / 2);
 		return (
 			<form action="#" className="form-horizontal">
@@ -111,7 +113,13 @@ export default class JobDetails extends Component {
 									<div className="col-sm-10">
 										<div className="form-group" id="postCountry">
 											<label className="checkbox-inline">
-												<input className="post-my" type="checkbox" />Malaysia
+												<input
+													className="post-my"
+													type="checkbox"
+													onClick={e =>
+														this.setState({ malaysia: e.target.checked })
+													}
+												/>Malaysia
 											</label>
 											<label className="checkbox-inline">
 												<input className="post-sg" type="checkbox" />Singapore
@@ -197,68 +205,20 @@ export default class JobDetails extends Component {
 												</span>
 											</div>
 										</div>
-										<div
-											className="form-group"
-											id="selected-sg"
-											style={{ display: 'none' }}
-										>
-											<label className="col-sm-2 form-control-static">
-												Singapore
-											</label>
-											<div className="col-sm-5">
-												<select
-													name=""
-													className="form-control select2"
-													multiple=""
-													tabIndex="-1"
-													style={{ display: 'none' }}
-												>
-													<optgroup label="Johor">
-														<option value="johor-all">Johor - All</option>
-														<option value="johor-batupahat">
-															Johor - Batu Pahat
-														</option>
-													</optgroup>
-													<optgroup label="Kuala Lumpur">
-														<option value="kl-all">Kuala Lumpur - All</option>
-													</optgroup>
-												</select>
-												<span
-													className="select2 select2-container select2-container--default"
-													dir="ltr"
-													style={{ width: '100%' }}
-												>
-													<span className="selection">
-														<span
-															className="select2-selection select2-selection--multiple"
-															tabIndex="0"
-															role="combobox"
-															aria-autocomplete="list"
-															aria-haspopup="true"
-															aria-expanded="false"
-															aria-owns="select2--results"
-														>
-															<ul className="select2-selection__rendered">
-																<li className="select2-search select2-search--inline">
-																	<input
-																		className="select2-search__field"
-																		type="search"
-																		tabIndex="-1"
-																		role="textbox"
-																		placeholder=""
-																		style={{ width: '0.75em' }}
-																	/>
-																</li>
-															</ul>
-														</span>
-													</span>
-													<span
-														className="dropdown-wrapper"
-														aria-hidden="true"
+										{malaysia && (
+											<div className="form-group" id="selected-sg">
+												<label className="col-sm-2 form-control-static">
+													Malaysia
+												</label>
+												<div className="col-sm-5">
+													<Select
+														placeholder="-Work Location-"
+														isMulti
+														options={constants.locationMalaysia}
 													/>
-												</span>
+												</div>
 											</div>
-										</div>
+										)}
 										<div
 											className="form-group"
 											id="specificArea"
@@ -281,34 +241,6 @@ export default class JobDetails extends Component {
 								</div>
 
 								<div className="form-group">
-									<label className="col-sm-2 control-label">
-										Auto Filter
-										<a
-											href="#"
-											data-toggle="popover"
-											data-html="true"
-											data-trigger="hover"
-											data-placement="top"
-											data-delay="5"
-											data-content="<span className=&quot;label label-info&quot;>Auto Filter</span><div style=&quot;font-size:13px;margin-top:3px;&quot;>Unsuitable applications will automatically move to Not Suitable</div>"
-											data-original-title=""
-											title=""
-										>
-											<span className="icon icon-question-mark icon-popover" />
-										</a>
-									</label>
-									<div className="col-sm-8">
-										<label className="checkbox-inline">
-											<input type="checkbox" />
-											<strong>
-												Only consider application from Singapore nationals and
-												permanent residents
-											</strong>
-										</label>
-									</div>
-								</div>
-
-								<div className="form-group">
 									<label
 										className="col-sm-2 control-label"
 										htmlFor="Monthly Salary"
@@ -323,9 +255,9 @@ export default class JobDetails extends Component {
 											tabIndex="-1"
 											style={{ display: 'none' }}
 										>
+											<option value="myr">MYR</option>
 											<option value="aud">AUD</option>
 											<option value="idr">IDR</option>
-											<option value="myr">MYR</option>
 											<option value="sgd">SGD</option>
 										</select>
 										<span
@@ -348,7 +280,7 @@ export default class JobDetails extends Component {
 														className="select2-selection__rendered"
 														id="select2-select2Salary-container"
 													>
-														AUD
+														MYR
 													</span>
 													<span
 														className="select2-selection__arrow"
