@@ -87,9 +87,9 @@ export default ({ clientStats }) => (req, res) => {
 
 				// 	$('#fieldInternUnpaySalary').click(function(event){
 				// 			if(this.checked) {
-				// 					$('.select2-salary, #minSalary, #maxSalary').prop("disabled", true);
+				// 					$('.select2-salary, #job_monthly_salary_min, #job_monthly_salary_max').prop("disabled", true);
 				// 			}else{
-				// 					$('.select2-salary, #minSalary, #maxSalary').prop("disabled", false);
+				// 					$('.select2-salary, #job_monthly_salary_min, #job_monthly_salary_max').prop("disabled", false);
 				// 			}
 				// 	});
 

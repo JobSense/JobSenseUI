@@ -28,37 +28,47 @@ DataConsumer.propTypes = {
 };
 
 class IndexPage extends React.Component {
+	constructor() {
+		super();
+		this.controller =
+			typeof window !== 'undefined' ? new AbortController() : {};
+	}
 	state = {
 		values: {
+			job_description: '',
 			job_title: '',
 			job_employment_type: '',
 			job_seniority_level: '',
 			job_specializations_string: '',
 			job_roles_string: '',
-			job_work_locations_string: [], // need to change to string
+			job_work_locations_string: '', // was array
 			job_salary_visible: false,
-			qualification_code: [], // need to change to string
-			field_of_study: [],
+			qualification_code_string: '', // was array
+			field_of_study: '', // was array
 			years_of_experience: 0,
-			mandatory_skill_keyword: [],
+			mandatory_skill_keyword: '', // was array
+			job_monthly_salary_min: 0,
+			job_monthly_salary_max: 0,
 
-			minSalary: 0,
-			maxSalary: 0,
+			//Fields i dk
+			job_auto_forwarded_flag: false,
+			job_internship_flag: false,
+			company_recruitment_firm_flag: false,
 		},
 		response: {
 			applies: {
 				prediction: {
-					max: 292.1773681640625,
-					median: 113.14586639404297,
-					min: 43.815799713134766,
+					max: 0,
+					median: 0,
+					min: 0,
 					toShow: true,
 				},
 			},
 			clicks: {
 				prediction: {
-					max: 865.8287353515625,
-					median: 375.0378723144531,
-					min: 162.44952392578125,
+					max: 0,
+					median: 0,
+					min: 0,
 					toShow: true,
 				},
 			},
@@ -90,19 +100,46 @@ class IndexPage extends React.Component {
 			},
 			talentPool: {
 				prediction: {
-					max: 1865.5220947265625,
-					median: 453.5396728515625,
-					min: 110.26305389404297,
+					max: 0,
+					median: 0,
+					min: 0,
 					toShow: true,
 				},
 			},
 		},
 		onChange: (name, value) => {
 			console.log(name, value);
-			this.setState({ values: { ...this.state.values, [name]: value } });
+			this.setState(
+				{ values: { ...this.state.values, [name]: value } },
+				async () => {
+					try {
+						this.controller.abort();
+						this.controller = new AbortController();
+						const signal = this.controller.signal;
+						const res = await fetch(
+							'http://hackathon-jobsense-service-staging.ap-southeast-1.elasticbeanstalk.com/predictions/job-ad-performance',
+							{
+								method: 'POST',
+								body: JSON.stringify({ ...this.state.values }),
+								headers: {
+									// 'Access-Control-Allow-Origin': '*',
+									Accept: 'application/json',
+									'Content-Type': 'application/json',
+								},
+								signal,
+							}
+						);
+						const response = await res.json();
+						this.setState({ response });
+					} catch (e) {
+						console.log('shit something wrong', e);
+					}
+				}
+			);
 		},
 	};
 	render() {
+		// console.log(this.state);
 		return (
 			<AppContext.Provider value={this.state}>
 				<div className={styles.container}>

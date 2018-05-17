@@ -38,9 +38,10 @@ export default class JobDescription extends Component {
 								<div className="form-group">
 									<TextEditor
 										onChange={val => {
-											const div = document.createElement('div');
-											div.innerHTML = val.editor.getData();
-											this.props.onChange('job_description', div.innerText);
+											this.props.onChange(
+												'job_description',
+												val.editor.getData()
+											);
 										}}
 									/>
 									<span className="help-block" style={{ display: 'none' }}>

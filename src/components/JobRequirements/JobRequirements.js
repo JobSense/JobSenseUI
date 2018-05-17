@@ -16,11 +16,12 @@ export default class JobDetails extends Component {
 	};
 
 	onMultiSelectChange = (fieldName, values) => {
-		const arrayOfValueString = values.map(({ value }) => value);
+		const arrayOfValueString = values.map(({ value }) => value).join(',');
 		this.props.onChange(fieldName, arrayOfValueString);
 	};
 
 	render() {
+		const { onChange } = this.props;
 		return (
 			<form action="#" className="form-horizontal">
 				<div className="panel form">
@@ -43,7 +44,10 @@ export default class JobDetails extends Component {
 											placeholder={'-Please select the Education Level-'}
 											options={educations}
 											onChange={val =>
-												this.onMultiSelectChange('qualification_code', val)
+												this.onMultiSelectChange(
+													'qualification_code_string',
+													val
+												)
 											}
 										/>
 									</div>
@@ -92,12 +96,12 @@ export default class JobDetails extends Component {
 									</label>
 									<div className="col-sm-10">
 										<CreatableSelect
-											onChange={val =>
-												this.props.onChange(
+											onChange={val => {
+												onChange(
 													'mandatory_skill_keyword',
-													val.map(val => val.value)
-												)
-											}
+													val.map(val => val.value).join(',')
+												);
+											}}
 										/>
 									</div>
 								</div>

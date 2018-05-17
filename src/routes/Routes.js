@@ -5,7 +5,7 @@ import App from '../components/AppContainer/AppContainer';
 import IndexPage from '../pages/IndexPage/IndexPage';
 import TestPage from 'pages/TestPage/TestPage';
 import './Override.css';
-
+import 'whatwg-fetch';
 class Routes extends Component {
 	render() {
 		const { location } = this.props;

@@ -22,22 +22,22 @@ export default class JobDetails extends Component {
 	};
 
 	onMultiSelectChange = (fieldName, values) => {
-		const arrayOfValueString = values.map(({ value }) => value);
+		const arrayOfValueString = values.map(({ value }) => value).join(',');
 		this.props.onChange(fieldName, arrayOfValueString);
 	};
 
 	salaryChangeMin = e => {
-		this.props.onChange('minSalary', parseInt(e.target.value));
+		this.props.onChange('job_monthly_salary_min', parseInt(e.target.value));
 	};
 
 	salaryChangeMax = e => {
-		this.props.onChange('maxSalary', parseInt(e.target.value));
+		this.props.onChange('job_monthly_salary_max', parseInt(e.target.value));
 	};
 
 	render() {
 		const {
-			minSalary,
-			maxSalary,
+			job_monthly_salary_min,
+			job_monthly_salary_max,
 			job_specializations_string,
 		} = this.props.values;
 		const { salary } = this.props.response.insights;
@@ -65,7 +65,7 @@ export default class JobDetails extends Component {
 											name="position_title"
 											className="form-control"
 											placeholder="-Eg. Human Resource Manager-"
-											onChange={e =>
+											onBlur={e =>
 												this.props.onChange('job_title', e.target.value)
 											}
 										/>
@@ -266,12 +266,12 @@ export default class JobDetails extends Component {
 														placeholder="-Work Location-"
 														isMulti
 														options={constants.locationMalaysia}
-														onChange={val =>
+														onChange={val => {
 															this.onMultiSelectChange(
 																'job_work_locations_string',
 																val
-															)
-														}
+															);
+														}}
 													/>
 												</div>
 											</div>
@@ -358,7 +358,7 @@ export default class JobDetails extends Component {
 											type="number"
 											className="form-control"
 											placeholder="Min"
-											id="minSalary"
+											id="job_monthly_salary_min"
 											min="0"
 											onBlur={this.salaryChangeMin.bind(this)}
 										/>
@@ -368,7 +368,7 @@ export default class JobDetails extends Component {
 											type="number"
 											className="form-control"
 											placeholder="Max"
-											id="maxSalary"
+											id="job_monthly_salary_max"
 											max="0"
 											onBlur={this.salaryChangeMax.bind(this)}
 										/>
@@ -382,8 +382,8 @@ export default class JobDetails extends Component {
 
 								<SalaryBar
 									salaryInsight={salary}
-									minSalaryInput={minSalary}
-									maxSalaryInput={maxSalary}
+									minSalaryInput={job_monthly_salary_min}
+									maxSalaryInput={job_monthly_salary_max}
 								/>
 
 								<div className="form-group">

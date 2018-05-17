@@ -9,7 +9,11 @@ module.exports = {
 	name: 'client',
 	target: 'web',
 	devtool: 'source-map',
-	entry: [path.resolve(__dirname, '../src/index.js')],
+	entry: [
+		'babel-polyfill',
+		'whatwg-fetch',
+		path.resolve(__dirname, '../src/index.js'),
+	],
 	output: {
 		filename: '[name].[chunkhash].js',
 		chunkFilename: '[name].[chunkhash].js',

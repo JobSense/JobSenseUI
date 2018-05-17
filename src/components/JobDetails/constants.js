@@ -2552,7 +2552,7 @@ export const locationMalaysia = [
 	{
 		label: 'Johor',
 		options: [
-			{ label: 'Johor - All', value: 'All' },
+			{ label: 'Johor - All', value: 'Johor' },
 			{ label: 'Johor - Batu Pahat', value: 'Batu Pahat' },
 			{ label: 'Johor - Johor Bahru', value: 'Johor Bahru' },
 			{ label: 'Johor - Kluang', value: 'Kluang' },
@@ -2567,7 +2567,7 @@ export const locationMalaysia = [
 	{
 		label: 'Kedah',
 		options: [
-			{ label: 'Kedah - All', value: 'All' },
+			{ label: 'Kedah - All', value: 'Kedah' },
 			{ label: 'Kedah - Alor Setar', value: 'Alor Setar' },
 			{ label: 'Kedah - Jitra', value: 'Jitra' },
 			{ label: 'Kedah - Kulim', value: 'Kulim' },
@@ -2578,12 +2578,12 @@ export const locationMalaysia = [
 	},
 	{
 		label: 'Kuala Lumpur',
-		options: [{ label: 'Kuala Lumpur - All', value: 'All' }],
+		options: [{ label: 'Kuala Lumpur - All', value: 'Kuala Lumpur' }],
 	},
 	{
 		label: 'Kelantan',
 		options: [
-			{ label: 'Kelantan - All', value: 'All' },
+			{ label: 'Kelantan - All', value: 'Kelantan' },
 			{ label: 'Kelantan - Kota Bharu', value: 'Kota Bharu' },
 			{ label: 'Kelantan - Others', value: 'Others' },
 		],
@@ -2592,7 +2592,7 @@ export const locationMalaysia = [
 	{
 		label: 'Melaka',
 		options: [
-			{ label: 'Melaka - All', value: 'All' },
+			{ label: 'Melaka - All', value: 'Melaka' },
 			{ label: 'Melaka - Alor Gajah', value: 'Alor Gajah' },
 			{ label: 'Melaka - Jasin', value: 'Jasin' },
 			{ label: 'Melaka - Melaka', value: 'Melaka' },
@@ -2602,7 +2602,7 @@ export const locationMalaysia = [
 	{
 		label: 'Negeri Sembilan',
 		options: [
-			{ label: 'Negeri Sembilan - All', value: 'All' },
+			{ label: 'Negeri Sembilan - All', value: 'Negeri Sembilan' },
 			{ label: 'Negeri Sembilan - Bahau', value: 'Bahau' },
 			{ label: 'Negeri Sembilan - Kuala Pilah', value: 'Kuala Pilah' },
 			{ label: 'Negeri Sembilan - Nilai', value: 'Nilai' },
@@ -2615,7 +2615,7 @@ export const locationMalaysia = [
 	{
 		label: 'Penang',
 		options: [
-			{ label: 'Penang - All', value: 'All' },
+			{ label: 'Penang - All', value: 'Penang' },
 			{ label: 'Penang - Ayer Itam', value: 'Ayer Itam' },
 			{ label: 'Penang - Bayan Lepas', value: 'Bayan Lepas' },
 			{ label: 'Penang - Bukit Mertajam', value: 'Bukit Mertajam' },
@@ -2633,7 +2633,7 @@ export const locationMalaysia = [
 	{
 		label: 'Pahang',
 		options: [
-			{ label: 'Pahang - All', value: 'All' },
+			{ label: 'Pahang - All', value: 'Pahang' },
 			{ label: 'Pahang - Bentong', value: 'Bentong' },
 			{ label: 'Pahang - Cameron Highlands', value: 'Cameron Highlands' },
 			{ label: 'Pahang - Jerantut', value: 'Jerantut' },
@@ -2647,7 +2647,7 @@ export const locationMalaysia = [
 	{
 		label: 'Perak',
 		options: [
-			{ label: 'Perak - All', value: 'All' },
+			{ label: 'Perak - All', value: 'Perak' },
 			{ label: 'Perak - Bidor', value: 'Bidor' },
 			{ label: 'Perak - Ipoh', value: 'Ipoh' },
 			{ label: 'Perak - Kuala Kangsar', value: 'Kuala Kangsar' },
@@ -2661,16 +2661,16 @@ export const locationMalaysia = [
 	{
 		label: 'Perlis',
 		options: [
-			{ label: 'Perlis - All', value: 'All' },
+			{ label: 'Perlis - All', value: 'Perlis' },
 			{ label: 'Perlis - Kangar', value: 'Kangar' },
 			{ label: 'Perlis - Others', value: 'Others' },
 		],
 	},
-	{ label: 'Putrajaya', options: [{ label: 'Putrajaya - All', value: 'All' }] },
+	{ label: 'Putrajaya', options: [{ label: 'Putrajaya - All', value: 'Putrajaya' }] },
 	{
 		label: 'Sabah',
 		options: [
-			{ label: 'Sabah - All', value: 'All' },
+			{ label: 'Sabah - All', value: 'Sabah' },
 			{ label: 'Sabah - Keningau', value: 'Keningau' },
 			{ label: 'Sabah - Kota Kinabalu', value: 'Kota Kinabalu' },
 			{ label: 'Sabah - Kudat', value: 'Kudat' },
@@ -2683,7 +2683,7 @@ export const locationMalaysia = [
 	{
 		label: 'Selangor',
 		options: [
-			{ label: 'Selangor - All', value: 'All' },
+			{ label: 'Selangor - All', value: 'Selangor' },
 			{ label: 'Selangor - Ampang', value: 'Ampang' },
 			{ label: 'Selangor - Cheras', value: 'Cheras' },
 			{ label: 'Selangor - Cyberjaya', value: 'Cyberjaya' },
@@ -2705,7 +2705,7 @@ export const locationMalaysia = [
 	{
 		label: 'Sarawak',
 		options: [
-			{ label: 'Sarawak - All', value: 'All' },
+			{ label: 'Sarawak - All', value: 'Sarawak' },
 			{ label: 'Sarawak - Bintulu', value: 'Bintulu' },
 			{ label: 'Sarawak - Kapit', value: 'Kapit' },
 			{ label: 'Sarawak - Kota Samarahan', value: 'Kota Samarahan' },
@@ -2721,7 +2721,7 @@ export const locationMalaysia = [
 	{
 		label: 'Terengganu',
 		options: [
-			{ label: 'Terengganu - All', value: 'All' },
+			{ label: 'Terengganu - All', value: 'Terengganu' },
 			{ label: 'Terengganu - Dungun', value: 'Dungun' },
 			{ label: 'Terengganu - Kemaman', value: 'Kemaman' },
 			{ label: 'Terengganu - Kuala Terengganu', value: 'Kuala Terengganu' },
