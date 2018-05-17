@@ -9,7 +9,7 @@ class Sidebar extends Component {
 		super();
 
 		this.state = {
-			expanded: false,
+			expanded: true,
 		};
 
 		this.handleExpand = this.handleExpand.bind(this);
@@ -39,48 +39,42 @@ class Sidebar extends Component {
 
 		const { expanded } = this.state;
 		return (
-			<div className={styles.container}>
-				<div className={styles.widgetWrap}>
-					<div className={styles.widgetBox}>
-						<div className={styles.title}>JobSense</div>
+			<div>
+				<div className={`${styles.container} ${expanded ? styles.showContent : styles.hideContent}`}>
+					<div className={styles.widgetWrap}>
+						<div className={`${styles.widgetBox} ${expanded ? styles.noCollapseTitle : styles.collapseTitle}`}>
+							<div className={`${styles.title}`}>JobSense</div>
+						</div>
+						<div className={`${styles.widgetContainer} ${expanded ? styles.showItem : styles.hideItem}`}>
+							<div className={styles.widgetBox}>
+								<div className={styles.widgetTitle}>Talent Pool</div>
+								<TalentPoolChart data={talentPoolData}/>
+							</div>
+							<div className={styles.widgetBox}>
+								<div className={styles.widgetTitle}>Engagements</div>
+								<EngagementChart data={applyEngagementData}/>
+								<EngagementChart data={clickEngagementData}/>
+							</div>
+						</div>
+						<div className={`${styles.widgetContainer} ${expanded ? styles.hideItem : styles.showItem}`}>
+							<div className={styles.widgetBox}>
+								<div className={styles.widgetTitleCollapse}>Talent Pool</div>
+								<span className={'material-icons'}>people</span>{talentPoolData.min} - {talentPoolData.max}
+							</div>
+							<div className={styles.widgetBox}>
+								<div className={styles.widgetTitleCollapse}>Applies</div>
+								<span className={'material-icons'}>contacts</span>{applyEngagementData.min} - {applyEngagementData.max}
+							</div>
+							<div className={styles.widgetBox}>
+								<div className={styles.widgetTitleCollapse}>Clicks</div>
+								<span className={'material-icons'}>touch_app</span>{clickEngagementData.min} - {clickEngagementData.max}
+							</div>
+						</div>
 					</div>
-					<div className={styles.widgetContainer}>
-						<div className={styles.widgetBox}>
-							<div className={styles.widgetTitle}>Talent Pool</div>
-							<TalentPoolChart data={talentPoolData}/>
-						</div>
-						<div className={styles.widgetBox}>
-							<div className={styles.widgetTitle}>Engagements</div>
-							<EngagementChart data={applyEngagementData}/>
-							<EngagementChart data={clickEngagementData}/>
-						</div>
+					<div className={styles.expandButton} onClick={this.handleExpand}>
+						<span className={'material-icons'}>{expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}</span>
 					</div>
 				</div>
-				{/*<div className={styles.container}>*/}
-					{/*<a href="#" className={expanded ? styles.closeButton : styles.expandButton} onClick={this.handleExpand}>*/}
-						{/*{expanded ? 'X' : '<'}*/}
-					{/*</a>*/}
-
-					{/*<div className={expanded ? styles.expandedContainer : styles.widgetContainer}>*/}
-						{/*<div className={styles.widget}>*/}
-							{/*<div className={styles.widgetTitle}>Talent Pool</div>*/}
-							{/*<div className={styles.widgetSubtitle}>*/}
-								{/*15000 - 20000{' '}*/}
-								{/*<i*/}
-									{/*className={'icon icon-question-mark icon-popover'}*/}
-									{/*style={{ verticalAlign: 'text-top' }}*/}
-								{/*/>*/}
-							{/*</div>*/}
-							{/*<div className={styles.widgetDescription}>Potential Reach</div>*/}
-						{/*</div>*/}
-						{/*<div className={styles.widget}>*/}
-							{/*<div className={styles.widgetTitle}>Engagements</div>*/}
-						{/*</div>*/}
-						{/*<div className={styles.widget}>*/}
-							{/*<div className={styles.widgetTitle}>Salary Benchmark</div>*/}
-						{/*</div>*/}
-					{/*</div>*/}
-				{/*</div>*/}
 			</div>
 		);
 	}
