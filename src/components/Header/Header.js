@@ -82,7 +82,7 @@ const Header = () => (
 					</li>
 					<li className="dropdown">
 						<a href="javascript:;" data-toggle="dropdown">
-							<span>Ang Kian Leong</span>
+							<span>Hanna Tan Yan Yin</span>
 							<span className="caret" />
 							<span className="text-muted">
 								JobStreet.com Shared Services Sdn Bhd
