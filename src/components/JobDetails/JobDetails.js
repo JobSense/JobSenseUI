@@ -255,9 +255,9 @@ export default class JobDetails extends Component {
 											tabIndex="-1"
 											style={{ display: 'none' }}
 										>
+											<option value="myr">MYR</option>
 											<option value="aud">AUD</option>
 											<option value="idr">IDR</option>
-											<option value="myr">MYR</option>
 											<option value="sgd">SGD</option>
 										</select>
 										<span
@@ -280,7 +280,7 @@ export default class JobDetails extends Component {
 														className="select2-selection__rendered"
 														id="select2-select2Salary-container"
 													>
-														AUD
+														MYR
 													</span>
 													<span
 														className="select2-selection__arrow"
