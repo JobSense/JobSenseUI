@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CKEditor from 'react-ckeditor-component';
 
-const removeButtons = 'Source,Save,NewPage,Preview,Print,Templates,Undo,Redo,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Italic,Underline,Strike,Subscript,Superscript,CopyFormatting,RemoveFormat,Blockquote,CreateDiv,JustifyLeft,JustifyRight,BidiLtr,BidiRtl,Language,Link,Unlink,Anchor,Image,Flash,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,Styles,Format,Font,FontSize,TextColor,BgColor,Maximize,ShowBlocks,About,Cut,Copy,Paste,PasteText,PasteFromWord,Find,Replace';
+const removeButtons =
+	'Source,Save,NewPage,Preview,Print,Templates,Undo,Redo,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Italic,Underline,Strike,Subscript,Superscript,CopyFormatting,RemoveFormat,Blockquote,CreateDiv,JustifyLeft,JustifyRight,BidiLtr,BidiRtl,Language,Link,Unlink,Anchor,Image,Flash,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,Styles,Format,Font,FontSize,TextColor,BgColor,Maximize,ShowBlocks,About,Cut,Copy,Paste,PasteText,PasteFromWord,Find,Replace';
 
 export default class TextEditor extends Component {
 	constructor(props) {
@@ -11,7 +12,7 @@ export default class TextEditor extends Component {
 			content: 'content',
 		};
 
-        this.ckRef = React.createRef();
+		this.ckRef = React.createRef();
 	}
 
 	updateContent = newContent => {
@@ -21,7 +22,7 @@ export default class TextEditor extends Component {
 	};
 
 	onChange = evt => {
-		console.log('onChange fired with event info: ', evt);
+		this.props.onChange(evt);
 		var newContent = evt.editor.getData();
 		this.setState({
 			content: newContent,
@@ -41,7 +42,7 @@ export default class TextEditor extends Component {
 			<CKEditor
 				activeClass="p10"
 				config={{
-					removeButtons: removeButtons
+					removeButtons: removeButtons,
 				}}
 				content={this.state.content}
 				events={{
@@ -49,7 +50,7 @@ export default class TextEditor extends Component {
 					afterPaste: this.afterPaste,
 					change: this.onChange,
 				}}
-                ref={this.ckRef}
+				ref={this.ckRef}
 			/>
 		);
 	}
