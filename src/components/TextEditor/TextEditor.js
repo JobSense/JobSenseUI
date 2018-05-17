@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import CKEditor from 'react-ckeditor-component';
 
-export default class Example extends Component {
+const removeButtons = 'Source,Save,NewPage,Preview,Print,Templates,Undo,Redo,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Italic,Underline,Strike,Subscript,Superscript,CopyFormatting,RemoveFormat,Blockquote,CreateDiv,JustifyLeft,JustifyRight,BidiLtr,BidiRtl,Language,Link,Unlink,Anchor,Image,Flash,Table,HorizontalRule,Smiley,SpecialChar,PageBreak,Iframe,Styles,Format,Font,FontSize,TextColor,BgColor,Maximize,ShowBlocks,About,Cut,Copy,Paste,PasteText,PasteFromWord,Find,Replace';
+
+export default class TextEditor extends Component {
 	constructor(props) {
 		super(props);
 		this.updateContent = this.updateContent.bind(this);
 		this.state = {
 			content: 'content',
 		};
+
+        this.ckRef = React.createRef();
 	}
 
 	updateContent = newContent => {
@@ -36,13 +40,16 @@ export default class Example extends Component {
 		return (
 			<CKEditor
 				activeClass="p10"
-				config={[]}
+				config={{
+					removeButtons: removeButtons
+				}}
 				content={this.state.content}
 				events={{
 					blur: this.onBlur,
 					afterPaste: this.afterPaste,
 					change: this.onChange,
 				}}
+                ref={this.ckRef}
 			/>
 		);
 	}
