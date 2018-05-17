@@ -15,11 +15,11 @@ const publicPath = clientConfig.output.publicPath;
 const outputPath = clientConfig.output.path;
 const app = express();
 
-app.listen(3000);
-console.log('Listening @ http://localhost:3000');
+app.listen(8080);
+console.log('Listening @ http://localhost:8080');
 
 const done = () => {
-	console.log('BUILD COMPLETE -- Listening @ http://localhost:3000');
+	console.log('BUILD COMPLETE -- Listening @ http://localhost:8080');
 };
 
 if (!PROD) {
