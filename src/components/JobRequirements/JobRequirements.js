@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './JobRequirements.css';
 import Select from '../Select/Select';
 import CreatableSelect from '../../components/CreatableSelect/CreatableSelect';
 import { educations, fieldStudies, yearOfStudies } from './constants';
 
 export default class JobDetails extends Component {
+	static propTypes = {
+		values: PropTypes.object,
+		onChange: PropTypes.func,
+	};
+
+	onSelectChange = (fieldName, { value }) => {
+		this.props.onChange(fieldName, value);
+	};
+
+	onMultiSelectChange = (fieldName, values) => {
+		const arrayOfValueString = values.map(({ value }) => value);
+		this.props.onChange(fieldName, arrayOfValueString);
+	};
+
 	render() {
 		return (
 			<form action="#" className="form-horizontal">
@@ -27,6 +42,9 @@ export default class JobDetails extends Component {
 											isMulti
 											placeholder={'-Please select the Education Level-'}
 											options={educations}
+											onChange={val =>
+												this.onMultiSelectChange('qualification_code', val)
+											}
 										/>
 									</div>
 								</div>
@@ -43,6 +61,9 @@ export default class JobDetails extends Component {
 											isMulti
 											placeholder={'Please select the Field Of Studies'}
 											options={fieldStudies}
+											onChange={val =>
+												this.onMultiSelectChange('field_of_study', val)
+											}
 										/>
 									</div>
 								</div>
@@ -58,6 +79,9 @@ export default class JobDetails extends Component {
 										<Select
 											placeholder={'-Min Year(s) of Experience-'}
 											options={yearOfStudies}
+											onChange={val =>
+												this.onSelectChange('years_of_experience', val)
+											}
 										/>
 									</div>
 								</div>
@@ -67,7 +91,14 @@ export default class JobDetails extends Component {
 										Skills
 									</label>
 									<div className="col-sm-10">
-										<CreatableSelect />
+										<CreatableSelect
+											onChange={val =>
+												this.props.onChange(
+													'mandatory_skill_keyword',
+													val.map(val => val.value)
+												)
+											}
+										/>
 									</div>
 								</div>
 								<div className="form-group">

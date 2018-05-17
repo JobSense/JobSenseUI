@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .title {
@@ -118,4 +119,55 @@
     display: inline-block;
     padding-top: 3px;
     font-size: 14px;
+}
+
+@media screen and (max-width:500px) {
+    .chart {
+        width: 14.5rem;
+        height: 7.25rem;
+    }
+
+    .semicircle {
+        width: 14.5rem;
+        height: 7.25rem;
+    }
+
+    .semicircle::before {
+        width: 11rem;
+        height: 5.5rem;
+        margin-left: -5.5rem;
+        bottom: -1px;
+    }
+
+    .semicircleMask {
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+
+    .semicircleMask::before {
+        width: 12.625rem;
+        height: 6.375rem;
+    }
+
+    .pointer {
+        width: 4px;
+        height: 80px;
+        bottom: 0;
+        left: 73px;
+    }
+
+    .pointerDot {
+        width: 10px;
+        height: 10px;
+        left: 70px;
+        bottom: -5px;
+    }
+
+    .minNumber {
+        left: -15px;
+    }
+
+    .maxNumber {
+        right: -15px;
+    }
 }

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import styles from './PreviewHeader.css';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
+import PropTypes from 'prop-types';
 
-export default class PreviewHeader extends Component {
+class PreviewHeader extends Component {
 	render() {
+		const { data } = this.props;
 		return (
 			<div className="panel topbar stickyEdit">
 				<div className="panel-body stickyTopBar">
@@ -35,8 +37,15 @@ export default class PreviewHeader extends Component {
 						</button>
 					</div>
 				</div>
-                <Sidebar />
+				<Sidebar data={data}/>
 			</div>
 		);
 	}
 }
+
+PreviewHeader.propTypes = {
+	data: PropTypes.object.isRequired,
+};
+
+
+export default PreviewHeader;
