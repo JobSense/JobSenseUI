@@ -24,22 +24,23 @@
     display: block;
     width: 20.5rem;
     height: 10.25rem;
-    background: linear-gradient(to right, #c0392b 0%, #f1c40f 50%, #1abc9c 100%);
+    background: #1abc9c;
     border-radius: 50% 50% 50% 50%/100% 100% 0 0;
 }
 
 .semicircle::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: 13px;
     left: 50%;
     z-index: 2;
     display: block;
     width: 13rem;
-    height: 6.9rem;
+    height: 6.6rem;
     margin-left: -6.5rem;
-    background: #1b3e94;
+    background: #042747;
     border-radius: 50% 50% 50% 50%/100% 100% 0 0;
+    transform: scale(1.5);
 }
 
 .semicircleMask {
@@ -71,14 +72,14 @@
 
 .pointer {
     display: block;
-    width: 6px;
+    width: 3px;
     height: 108px;
     background-color: #eee;
     border-radius: 4px 4px 0 0;
     position: absolute;
     z-index: 4;
     bottom: 0;
-    left: 100px;
+    left: 101px;
     transform: rotate(-90deg);
     transform-origin: center bottom;
     transition: transform 800ms ease;
@@ -105,7 +106,7 @@
     position: absolute;
     width: 50px;
     text-align: center;
-    left: -8px;
+    left: -21px;
     display: inline-block;
     padding-top: 3px;
     font-size: 14px;
@@ -114,7 +115,7 @@
 .maxNumber {
     position: absolute;
     width: 50px;
-    right: -8px;
+    right: -21px;
     text-align: center;
     display: inline-block;
     padding-top: 3px;
@@ -133,10 +134,11 @@
     }
 
     .semicircle::before {
-        width: 11rem;
-        height: 5.5rem;
-        margin-left: -5.5rem;
+        width: 13rem;
+        height: 6.5rem;
+        margin-left: -6.5rem;
         bottom: -1px;
+        transform: scale(1.0);
     }
 
     .semicircleMask {
@@ -150,7 +152,7 @@
     }
 
     .pointer {
-        width: 4px;
+        width: 3px;
         height: 80px;
         bottom: 0;
         left: 73px;

@@ -49,11 +49,17 @@ class Sidebar extends Component {
 							<div className={styles.widgetBox}>
 								<div className={styles.widgetTitle}>Talent Pool</div>
 								<TalentPoolChart data={talentPoolData}/>
+								<div className={styles.desc}>
+									<div>Talent Pool calculated based on seniority and salary ......</div>
+								</div>
 							</div>
 							<div className={styles.widgetBox}>
 								<div className={styles.widgetTitle}>Engagements</div>
 								<EngagementChart data={applyEngagementData}/>
 								<EngagementChart data={clickEngagementData}/>
+								<div className={`${styles.desc} ${styles.descEngagement}`}>
+									<div>Engagement calculated based on seniority and salary ......</div>
+								</div>
 							</div>
 						</div>
 						<div className={`${styles.widgetContainer} ${expanded ? styles.hideItem : styles.showItem}`}>
