@@ -83,7 +83,6 @@ class IndexPage extends React.Component {
 		},
 	};
 	render() {
-		console.log(this.state);
 		return (
 			<AppContext.Provider value={this.state}>
 				<div className={styles.container}>
