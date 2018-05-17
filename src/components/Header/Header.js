@@ -85,7 +85,7 @@ const Header = () => (
 							<span>Hanna Tan Yan Yin</span>
 							<span className="caret" />
 							<span className="text-muted">
-								JobStreet.com Shared Services Sdn Bhd
+								Global Delivery Pod
 							</span>
 						</a>
 						<ul className="dropdown-menu">
