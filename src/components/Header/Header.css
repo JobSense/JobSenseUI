@@ -1,0 +1,7 @@
+.selfNavBar {
+    display: flex;
+}
+
+.selfContainer {
+    margin-left: 5% !important;
+}

@@ -19,6 +19,7 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
+				exclude: [/node_modules/, /\bOverride\b\.css$/],
 				use: ExtractCssChunks.extract({
 					use: [
 						{
@@ -27,6 +28,24 @@ module.exports = {
 								modules: true,
 								localIdentName: '[name]__[local]--[hash:base64:5]',
 								importLoaders: 1,
+							},
+						},
+						{
+							loader: 'postcss-loader',
+						},
+					],
+				}),
+			},
+			{
+				test: /\bOverride\b\.css$/,
+				exclude: [/node_modules/],
+				use: ExtractCssChunks.extract({
+					use: [
+						{
+							loader: 'css-loader',
+							options: {
+								modules: false,
+								importLoaders: 0,
 							},
 						},
 						{
