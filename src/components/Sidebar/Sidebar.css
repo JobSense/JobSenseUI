@@ -6,6 +6,7 @@
     height: 100%;
     background-color: #1b3e94;
     display: flex;
+    flex-direction: column;
 }
 
 .widgetWrap {
@@ -42,17 +43,16 @@
 .widgetTitle {
     align-self: center;
     padding-bottom: 10px;
+
 }
 
-.expandButtonWrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.widgetTitleCollapse {
+    margin: 0;
 }
 
 .hideContent {
 @extend .content;
-    max-height: 120px;
+    max-height: 140px;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
@@ -64,6 +64,21 @@
     transition: all 1s ease;
 }
 
+.showItem {
+    display: flex;
+}
+
+.hideItem {
+    display: none;
+}
+
+.noCollapseTitle {
+    padding-bottom: 10px !important;
+}
+
+.collapseTitle {
+    padding-bottom: 5px !important;
+}
 
 @media screen and (max-width:500px) {
     .container {
@@ -86,48 +101,9 @@
     }
 
     .widgetContainer {
+        flex-direction: row;
         padding-top: 0;
         align-items: baseline;
-    }
-
-    .expandButton {
-        bottom: -12px;
-        background-color: #1b3e94;
-        color: white;
-        font-size: 22px;
-        padding: 6px 12px 4px;
-        border-radius: 0 0 20px 20px;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-
-    .expandButton:visited {
-        color: white;
-        text-decoration: none;
-    }
-
-    .expandButton:focus {
-        color: white;
-        text-decoration: none;
-    }
-
-    .widgetContainer {
-        display: flex;
-        flex: 1;
-        flex-direction: row;
-    }
-    .widget {
-        background-color: #042747;
-        border-radius: 0;
-        height: auto;
-        margin-top: 4px;
-
-        display: flex;
-        justify-content: center;
-        align-self: start;
-        flex-direction: column;
-        color: #fafafa;
     }
 
     .widgetTitle {
@@ -137,66 +113,18 @@
         font-size: 12px;
     }
 
-    .widgetSubtitle {
-        margin-top: 4px;
-        align-self: center;
-        flex: 0.5;
-        font-size: 10px;
-
-    }
-    .widgetDescription {
-        margin-top: 4px;
-        align-self: center;
-        flex: 0.5;
-        font-size: 10px;
-    }
-
-    .widgetButton {
+    .expandButton {
+        justify-content: flex-end;
         position: absolute;
-        bottom: 6px;
-        width: 100%;
-        justify-content: center;
-        display: none;
-    }
-
-    .expandedContainer {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: #042747;
+        right: 0;
+        bottom: -22px;
+        background-color: #1b3e94;
+        color: white;
+        font-size: 22px;
+        padding: 6px 12px 4px;
+        border-radius: 0 0 20px 20px;
         display: flex;
-        flex: 1;
-        flex-direction: column;
-        align-content: center;
-        z-index: 5;
-    }
-
-    .expandedContainer .widget {
-        width: 100%;
-        flex: 1;
-    }
-
-    .expandedContainer .widgetTitle {
-        font-size: 16px;
-    }
-
-    .closeButton {
-        position: absolute;
-        top: 24px;
-        right: 24px;
-        z-index: 6;
-        font-size: 24px;
-        color: white;
-        text-decoration: none;
-    }
-
-    .closeButton:visited {
-        color: white;
-        text-decoration: none;
-    }
-
-    .closeButton:focus {
-        color: white;
+        align-items: center;
         text-decoration: none;
     }
 
