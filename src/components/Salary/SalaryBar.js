@@ -40,12 +40,10 @@ class SalaryBar extends Component {
 		const maxTagPos = `${maxGraphClamped * 100}%`;
 
 		const graphRange = `${(maxGraphClamped - minGraphClamped)*100}%`;
-		const minBackgroundColor = (value) => {
-			return value < averageSalary.min && 'red';
-		}; 
 
 		return (
 			<div>
+				<div className={styles.coverLeft}/>
 				<div className={styles.graphDetails}>
 					
 					<div
@@ -60,6 +58,10 @@ class SalaryBar extends Component {
 					</div>
 					<div className={styles.graphBar}>
 						<div className={styles.graphRange} style={{ marginLeft: minTagPos , width: graphRange }}/>
+						<div className={styles.graphLabel}>
+							<div className={styles.graphLabelMin}>{currency} {averageSalary.min}</div>
+							<div className={styles.graphLabelMax}>{currency} {averageSalary.max}</div>
+						</div>
 					</div>
 					<div
 						className={styles.graphAverage}
@@ -82,6 +84,7 @@ class SalaryBar extends Component {
 						{currency} {averageSalary.max}
 					</div> */}
 				</div>
+				<div className={styles.coverRight}/>
 			</div>
 		);
 	}
