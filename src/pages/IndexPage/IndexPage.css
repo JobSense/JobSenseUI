@@ -23,4 +23,12 @@
         width: 100%;
         margin-left: 0;
     }
+
+    .formContainer {
+        margin-left: 0;
+    }
+
+    .sideBar {
+        display: none;
+    }
 }

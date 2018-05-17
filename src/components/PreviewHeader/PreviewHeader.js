@@ -35,7 +35,7 @@ export default class PreviewHeader extends Component {
 						</button>
 					</div>
 				</div>
-                <Sidebar />
+				<Sidebar />
 			</div>
 		);
 	}

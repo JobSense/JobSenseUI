@@ -10,7 +10,6 @@ import JobDescription from '../../components/JobDescription/JobDescription';
 import AdditionalOptions from '../../components/AdditionalOptions/AdditionalOptions';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import PreviewHeader from '../../components/PreviewHeader/PreviewHeader';
-import TalentPoolChart from '../../components/TalentPoolChart/TalentPoolChart';
 
 const AppContext = React.createContext('value');
 const DataConsumer = ({ children }) => {
@@ -53,7 +52,9 @@ class IndexPage extends React.Component {
 						</DataConsumer>
 					</div>
 				</div>
-				<Sidebar />
+				<div className={styles.sideBar}>
+					<Sidebar />
+				</div>
 			</AppContext.Provider>
 		);
 	}
