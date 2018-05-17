@@ -14,6 +14,7 @@ class CreatableInputOnly extends Component {
 
 	handleChange = value => {
 		this.setState({ value });
+		this.props.onChange(value);
 	};
 
 	handleInputChange = inputValue => {

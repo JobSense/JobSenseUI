@@ -16,6 +16,15 @@ export default class JobDetails extends Component {
 		onChange: PropTypes.func,
 	};
 
+	onSelectChange = (fieldName, { value }) => {
+		this.props.onChange(fieldName, value);
+	};
+
+	onMultiSelectChange = (fieldName, values) => {
+		const arrayOfValueString = values.map(({ value }) => value);
+		this.props.onChange(fieldName, arrayOfValueString);
+	};
+
 	salaryChangeMin = e => {
 		this.props.onChange('minSalary', parseInt(e.target.value));
 	};
@@ -25,7 +34,11 @@ export default class JobDetails extends Component {
 	};
 
 	render() {
-		const { minSalary, maxSalary } = this.props.values;
+		const {
+			minSalary,
+			maxSalary,
+			job_specializations_string,
+		} = this.props.values;
 		const { malaysia } = this.state;
 		const averageSalaryInput = Math.floor((minSalary + maxSalary) / 2);
 		return (
@@ -51,6 +64,9 @@ export default class JobDetails extends Component {
 											name="position_title"
 											className="form-control"
 											placeholder="-Eg. Human Resource Manager-"
+											onChange={e =>
+												this.props.onChange('job_title', e.target.value)
+											}
 										/>
 										<span className="help-block" style={{ display: 'none' }}>
 											Position Title is required with minimal 3 characters
@@ -69,6 +85,9 @@ export default class JobDetails extends Component {
 										<Select
 											placeholder="-Employment Type-"
 											options={constants.employmentType}
+											onChange={val =>
+												this.onSelectChange('job_employment_type', val)
+											}
 										/>
 									</div>
 								</div>
@@ -83,7 +102,10 @@ export default class JobDetails extends Component {
 									<div className="col-sm-10">
 										<Select
 											placeholder="-Position Level-"
-											options={constants.employmentType}
+											options={constants.employmentPosition}
+											onChange={val =>
+												this.onSelectChange('job_seniority_level', val)
+											}
 										/>
 									</div>
 								</div>
@@ -99,9 +121,37 @@ export default class JobDetails extends Component {
 										<Select
 											placeholder="-Job Specialization-"
 											options={constants.jobSpecialization}
+											onChange={val => {
+												this.onSelectChange('job_roles_string', '');
+												this.onSelectChange('job_specializations_string', val);
+											}}
 										/>
 									</div>
 								</div>
+
+								{job_specializations_string && (
+									<div className="form-group">
+										<label
+											className="col-sm-2 control-label"
+											htmlFor="Job Specialization"
+										>
+											Job Role<span className="text-danger">*</span>
+										</label>
+										<div className="col-sm-10">
+											<Select
+												placeholder="-Job Role-"
+												options={
+													constants.jobSpecialization.find(
+														val => val.value === job_specializations_string
+													).children
+												}
+												onChange={val =>
+													this.onSelectChange('job_roles_string', val)
+												}
+											/>
+										</div>
+									</div>
+								)}
 
 								<div className="form-group">
 									<label
@@ -215,6 +265,12 @@ export default class JobDetails extends Component {
 														placeholder="-Work Location-"
 														isMulti
 														options={constants.locationMalaysia}
+														onChange={val =>
+															this.onMultiSelectChange(
+																'job_work_locations_string',
+																val
+															)
+														}
 													/>
 												</div>
 											</div>
@@ -346,6 +402,12 @@ export default class JobDetails extends Component {
 													id="fieldSalaryDisplayFlag"
 													type="checkbox"
 													name=""
+													onChange={e =>
+														this.props.onChange(
+															'job_salary_visible',
+															e.target.checked
+														)
+													}
 												/>
 												<span>
 													Display salary on ad to attract the right candidates
