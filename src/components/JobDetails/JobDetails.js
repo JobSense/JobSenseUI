@@ -13,6 +13,7 @@ export default class JobDetails extends Component {
 
 	static propTypes = {
 		values: PropTypes.object,
+		response: PropTypes.object,
 		onChange: PropTypes.func,
 	};
 
@@ -39,6 +40,7 @@ export default class JobDetails extends Component {
 			maxSalary,
 			job_specializations_string,
 		} = this.props.values;
+		const { salary } = this.props.response.insights;
 		const { malaysia } = this.state;
 		return (
 			<form action="#" className="form-horizontal">
@@ -378,7 +380,11 @@ export default class JobDetails extends Component {
 									</div>
 								</div>
 
-								<SalaryBar minSalaryInput={minSalary} maxSalaryInput={maxSalary} />
+								<SalaryBar
+									salaryInsight={salary}
+									minSalaryInput={minSalary}
+									maxSalaryInput={maxSalary}
+								/>
 
 								<div className="form-group">
 									<div className="col-sm-offset-2 col-sm-10">

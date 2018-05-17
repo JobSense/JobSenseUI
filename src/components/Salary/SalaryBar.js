@@ -9,31 +9,31 @@ class SalaryBar extends Component {
 
 	render() {
 		const {
-			averageSalary,
+			salaryInsight,
 			minSalaryInput,
 			maxSalaryInput,
 			currency,
 		} = this.props;
 		const graphWidth = '11.5rem'; // From CSS
 		// const averageScale =
-		// 	(averageSalaryInput - averageSalary.min) /
-		// 	(averageSalary.max - averageSalary.min);
+		// 	(salaryInsightInput - salaryInsight.min) /
+		// 	(salaryInsight.max - salaryInsight.min);
 		// const graphClamped = Math.min(Math.max(0, averageScale), 1);
 		// const graphPos = `calc(${graphClamped *
 		// 	100}% - (${graphWidth} * ${graphClamped}))`;
 		// const tagPos = `${graphClamped * 100}%`;
 
 		const minAverageScale =
-			(minSalaryInput - averageSalary.min) /
-			(averageSalary.max - averageSalary.min);
+			(minSalaryInput - salaryInsight.min) /
+			(salaryInsight.max - salaryInsight.min);
 		const minGraphClamped = Math.min(Math.max(0, minAverageScale), 1);
 		const minGraphPos = `calc(${minGraphClamped *
 			100}% - (${graphWidth} * ${minGraphClamped}))`;
 		const minTagPos = `${minGraphClamped * 100}%`;
 
 		const maxAverageScale =
-			(maxSalaryInput - averageSalary.min) /
-			(averageSalary.max - averageSalary.min);
+			(maxSalaryInput - salaryInsight.min) /
+			(salaryInsight.max - salaryInsight.min);
 		const maxGraphClamped = Math.min(Math.max(0, maxAverageScale), 1);
 		const maxGraphPos = `calc(${maxGraphClamped *
 			100}% - (${graphWidth} * ${maxGraphClamped}))`;
@@ -59,8 +59,8 @@ class SalaryBar extends Component {
 					<div className={styles.graphBar}>
 						<div className={styles.graphRange} style={{ marginLeft: minTagPos , width: graphRange }}/>
 						<div className={styles.graphLabel}>
-							<div className={styles.graphLabelMin}>{currency} {averageSalary.min}</div>
-							<div className={styles.graphLabelMax}>{currency} {averageSalary.max}</div>
+							<div className={styles.graphLabelMin}>{currency} {salaryInsight.min}</div>
+							<div className={styles.graphLabelMax}>{currency} {salaryInsight.max}</div>
 						</div>
 					</div>
 					<div
@@ -76,12 +76,12 @@ class SalaryBar extends Component {
 					
 					{/* <div className={styles.graphMin}>
 						<span className={styles.graphLabel}>MIN</span>
-						{currency} {averageSalary.min}
+						{currency} {salaryInsight.min}
 					</div>
 
 					<div className={styles.graphMax}>
 						<span className={styles.graphLabel}>MAX</span>
-						{currency} {averageSalary.max}
+						{currency} {salaryInsight.max}
 					</div> */}
 				</div>
 				<div className={styles.coverRight}/>
@@ -91,12 +91,12 @@ class SalaryBar extends Component {
 }
 
 SalaryBar.propTypes = {
-	averageSalary: PropTypes.object.isRequired,
+	salaryInsight: PropTypes.object.isRequired,
 	currency: PropTypes.string.isRequired,
 };
 
 SalaryBar.defaultProps = {
-	averageSalary: {
+	salaryInsight: {
 		min: 2000,
 		max: 5000,
 	},

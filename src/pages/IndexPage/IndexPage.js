@@ -46,35 +46,55 @@ class IndexPage extends React.Component {
 			maxSalary: 0,
 		},
 		response: {
-			talentPool: {
+			applies: {
 				prediction: {
-					min: 20,
-					max: 3000,
-					median: 2000,
+					max: 292.1773681640625,
+					median: 113.14586639404297,
+					min: 43.815799713134766,
 					toShow: true,
 				},
 			},
 			clicks: {
 				prediction: {
-					min: 10,
-					max: 700,
-					median: 100,
-					toShow: true,
-				},
-			},
-			applies: {
-				prediction: {
-					min: 1,
-					max: 150,
-					median: 40,
+					max: 865.8287353515625,
+					median: 375.0378723144531,
+					min: 162.44952392578125,
 					toShow: true,
 				},
 			},
 			insights: {
-				applies:
-					'Based on job ad posted in the market that have similar attributes (industry, location and years of experience), the minimum application is 0, maximum is 100 and median is 30.',
-				salary:
-					'Based on job ad posted in the market that have similar attributes (industry, location and years of experience), the minimum salary is 2000, maxiumum is 3000 and median is 2300.',
+				applies: {
+					max: 0,
+					median: 0,
+					min: 0,
+					toShow: false,
+				},
+				salary: {
+					max: 0,
+					median: 0,
+					min: 0,
+					toShow: false,
+				},
+				talentPool: {
+					max: 0,
+					median: 0,
+					min: 0,
+					toShow: false,
+				},
+				view: {
+					max: 0,
+					median: 0,
+					min: 0,
+					toShow: false,
+				},
+			},
+			talentPool: {
+				prediction: {
+					max: 1865.5220947265625,
+					median: 453.5396728515625,
+					min: 110.26305389404297,
+					toShow: true,
+				},
 			},
 		},
 		onChange: (name, value) => {
@@ -89,7 +109,7 @@ class IndexPage extends React.Component {
 					<Header />
 					<div className={styles.formContainer}>
 						<DataConsumer>
-							<PreviewHeader data={this.state}/>
+							<PreviewHeader data={this.state} />
 							<JobDetails />
 							<JobRequirements />
 							<JobDescription />
@@ -98,7 +118,7 @@ class IndexPage extends React.Component {
 					</div>
 				</div>
 				<div className={styles.sideBar}>
-						<Sidebar data={this.state}/>
+					<Sidebar data={this.state} />
 				</div>
 			</AppContext.Provider>
 		);
