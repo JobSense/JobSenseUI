@@ -8,43 +8,71 @@ class SalaryBar extends Component {
 	}
 
 	render() {
-		const { averageSalary, averageSalaryInput, currency } = this.props;
+		const {
+			averageSalary,
+			minSalaryInput,
+			maxSalaryInput,
+			currency,
+		} = this.props;
 		const graphWidth = '11.5rem'; // From CSS
-		const averageScale =
-			(averageSalaryInput - averageSalary.min) /
+		// const averageScale =
+		// 	(averageSalaryInput - averageSalary.min) /
+		// 	(averageSalary.max - averageSalary.min);
+		// const graphClamped = Math.min(Math.max(0, averageScale), 1);
+		// const graphPos = `calc(${graphClamped *
+		// 	100}% - (${graphWidth} * ${graphClamped}))`;
+		// const tagPos = `${graphClamped * 100}%`;
+
+		const minAverageScale =
+			(minSalaryInput - averageSalary.min) /
 			(averageSalary.max - averageSalary.min);
-		const graphClamped = Math.min(Math.max(0, averageScale), 1);
-		const graphPos = `calc(${graphClamped *
-			100}% - (${graphWidth} * ${graphClamped}))`;
-		const tagPos = `${graphClamped * 100}%`;
+		const minGraphClamped = Math.min(Math.max(0, minAverageScale), 1);
+		const minGraphPos = `calc(${minGraphClamped *
+			100}% - (${graphWidth} * ${minGraphClamped}))`;
+		const minTagPos = `${minGraphClamped * 100}%`;
+
+		const maxAverageScale =
+			(maxSalaryInput - averageSalary.min) /
+			(averageSalary.max - averageSalary.min);
+		const maxGraphClamped = Math.min(Math.max(0, maxAverageScale), 1);
+		const maxGraphPos = `calc(${maxGraphClamped *
+			100}% - (${graphWidth} * ${maxGraphClamped}))`;
+		const maxTagPos = `${maxGraphClamped * 100}%`;
+
+		const graphRange = `${(maxGraphClamped - minGraphClamped)*100}%`;
+		const minBackgroundColor = (value) => {
+			return value < averageSalary.min && 'red';
+		}; 
+
 		return (
 			<div>
 				<div className={styles.graphDetails}>
-					{averageSalaryInput < averageSalary.min ||
-					averageSalaryInput > averageSalary.max ? (
-						<div
-							className={styles.graphAverage}
-							style={{ marginLeft: graphPos, backgroundColor: 'red' }}
-						>
-							AVG {currency} {averageSalaryInput}
-							<span
-								className={styles.graphTag}
-								style={{ left: tagPos, borderTopColor: 'red' }}
-							/>
-						</div>
-					) : (
-						<div
-							className={styles.graphAverage}
-							style={{ marginLeft: graphPos }}
-						>
-							AVG {currency} {averageSalaryInput}
-							<span className={styles.graphTag} style={{ left: tagPos }} />
-						</div>
-					)}
-
-					<span className={styles.graphBar} />
-
-					<div className={styles.graphMin}>
+					
+					<div
+						className={styles.graphAverage}
+						style={{ marginLeft: minGraphPos }}
+					>
+						MIN {currency} {minSalaryInput}
+						<span
+							className={styles.graphTagMin}
+							style={{ left: minTagPos }}
+						/>
+					</div>
+					<div className={styles.graphBar}>
+						<div className={styles.graphRange} style={{ marginLeft: minTagPos , width: graphRange }}/>
+					</div>
+					<div
+						className={styles.graphAverage}
+						style={{ marginLeft: maxGraphPos }}
+					>
+						MAX {currency} {maxSalaryInput}
+						<span
+							className={styles.graphTagMax}
+							style={{ left: maxTagPos }}
+						/>
+					</div>
+					
+					{/* <div className={styles.graphMin}>
 						<span className={styles.graphLabel}>MIN</span>
 						{currency} {averageSalary.min}
 					</div>
@@ -52,7 +80,7 @@ class SalaryBar extends Component {
 					<div className={styles.graphMax}>
 						<span className={styles.graphLabel}>MAX</span>
 						{currency} {averageSalary.max}
-					</div>
+					</div> */}
 				</div>
 			</div>
 		);
@@ -61,7 +89,6 @@ class SalaryBar extends Component {
 
 SalaryBar.propTypes = {
 	averageSalary: PropTypes.object.isRequired,
-	averageSalaryInput: PropTypes.number.isRequired,
 	currency: PropTypes.string.isRequired,
 };
 
@@ -70,7 +97,9 @@ SalaryBar.defaultProps = {
 		min: 2000,
 		max: 5000,
 	},
-	currency: 'AUD',
+	currency: 'MYR',
+	minSalaryInput: 0,
+	maxSalaryinput: 0,
 };
 
 export default SalaryBar;

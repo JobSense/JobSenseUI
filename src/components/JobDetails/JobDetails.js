@@ -27,7 +27,6 @@ export default class JobDetails extends Component {
 	render() {
 		const { minSalary, maxSalary } = this.props.values;
 		const { malaysia } = this.state;
-		const averageSalaryInput = Math.floor((minSalary + maxSalary) / 2);
 		return (
 			<form action="#" className="form-horizontal">
 				<div className={'panel form'}>
@@ -323,7 +322,7 @@ export default class JobDetails extends Component {
 									</div>
 								</div>
 
-								<SalaryBar averageSalaryInput={averageSalaryInput} />
+								<SalaryBar minSalaryInput={minSalary} maxSalaryInput={maxSalary} />
 
 								<div className="form-group">
 									<div className="col-sm-offset-2 col-sm-10">
