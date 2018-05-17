@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/server';
 import { flushChunkNames } from 'react-universal-component/server';
 import { Provider } from 'react-redux';
+import { renderStylesToString } from 'emotion-server';
 import flushChunks from 'webpack-flush-chunks';
 import App from '../src/routes/Routes';
 import configureStore from '../src/configureStore';
@@ -14,12 +15,14 @@ export default ({ clientStats }) => (req, res) => {
 	const initialState = JSON.stringify(store.getState());
 	const context = {};
 
-	const app = ReactDOM.renderToString(
-		<Provider store={store}>
-			<StaticRouter location={req.url} context={context}>
-				<Route component={App} />
-			</StaticRouter>
-		</Provider>
+	const app = renderStylesToString(
+		ReactDOM.renderToString(
+			<Provider store={store}>
+				<StaticRouter location={req.url} context={context}>
+					<Route component={App} />
+				</StaticRouter>
+			</Provider>
+		)
 	);
 	const helmet = Helmet.renderStatic();
 	const chunkNames = flushChunkNames();
