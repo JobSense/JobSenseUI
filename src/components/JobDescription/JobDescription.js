@@ -5,7 +5,7 @@ import styles from './JobDescription.css';
 export default class JobDescription extends Component {
 	render() {
 		return (
-            <form action="#" className="form-horizontal">
+			<form action="#" className="form-horizontal">
 				<div className="panel form">
 					<br />
 					<div className="panel-body">
@@ -24,8 +24,8 @@ export default class JobDescription extends Component {
 											status or disability. It is against the law in some
 											countries* and your company may have internal policies
 											against such practices. JobStreet.com will not bear any
-											responsibility for any consequences that may arise from the
-											inappropriateness of such job postings.
+											responsibility for any consequences that may arise from
+											the inappropriateness of such job postings.
 										</p>
 										<p>
 											<strong>
@@ -36,7 +36,13 @@ export default class JobDescription extends Component {
 									</div>
 								</fieldset>
 								<div className="form-group">
-                                    <TextEditor></TextEditor>
+									<TextEditor
+										onChange={val => {
+											const div = document.createElement('div');
+											div.innerHTML = val.editor.getData();
+											this.props.onChange('job_description', div.innerText);
+										}}
+									/>
 									<span className="help-block" style={{ display: 'none' }}>
 										Job Description is required with minimal 300 characters
 									</span>
