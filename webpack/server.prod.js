@@ -26,7 +26,7 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				exclude: /node_modules/,
+				exclude: [/node_modules/, /\bOverride\b\.css$/],
 				use: [
 					{
 						loader: 'css-loader/locals',
@@ -34,6 +34,22 @@ module.exports = {
 							modules: true,
 							localIdentName: '[name]__[local]--[hash:base64:5]',
 							importLoaders: 1,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+					},
+				],
+			},
+			{
+				test: /\bOverride\b\.css$/,
+				exclude: [/node_modules/],
+				use: [
+					{
+						loader: 'css-loader/locals',
+						options: {
+							modules: false,
+							importLoaders: 0,
 						},
 					},
 					{
