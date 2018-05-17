@@ -36,7 +36,7 @@ export default ({ clientStats }) => (req, res) => {
 					<link rel="stylesheet" href="http://dna.jsstatic.com/pi/icon-font/2.3/icon-font.css">
 					<link rel="stylesheet" href="http://dna.jsstatic.com/select2/select2.css">
 					<link rel="stylesheet" href="http://dna.jsstatic.com/css/bootstrap-datepicker.min.css">
-
+					<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 					<!-- Favicon -->
 					<link rel="icon" type="image/ico" href="https://sivastage.jobstreet.com/assets/img/favicon.ico">
 					<!-- End of Favicon -->
