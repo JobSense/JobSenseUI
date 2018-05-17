@@ -162,4 +162,12 @@
         left: 70px;
         bottom: -5px;
     }
+
+    .minNumber {
+        left: -15px;
+    }
+
+    .maxNumber {
+        right: -15px;
+    }
 }

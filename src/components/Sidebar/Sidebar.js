@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import styles from './Sidebar.css';
 import EngagementChart from '../EngagementChart/EngagementChart';
 import TalentPoolChart from '../TalentPoolChart/TalentPoolChart';
+import PropTypes from 'prop-types';
 
-export default class Sidebar extends Component {
+class Sidebar extends Component {
 	constructor() {
 		super();
 
@@ -19,28 +20,24 @@ export default class Sidebar extends Component {
 	}
 
 	render() {
+		const { data } = this.props;
+		const responseData = data && data.response;
+
 		const applyEngagementData ={
 			label: 'Apply',
-			min: 0,
-			max: 5000,
-			average: 2000,
+			...responseData && responseData.applies.prediction
 		};
 
 		const clickEngagementData ={
 			label: 'Click',
-			min: 3000,
-			max: 7000,
-			average: 4000,
+			...responseData && responseData.clicks.prediction
 		};
 
-		const talentPoolData ={
-			min: 20,
-			max: 5000,
-			average: 2000,
+		const talentPoolData = {
+			...responseData && responseData.talentPool.prediction
 		};
 
-	const { expanded } = this.state;
-
+		const { expanded } = this.state;
 		return (
 			<div className={styles.container}>
 				<div className={styles.widgetWrap}>
@@ -88,3 +85,10 @@ export default class Sidebar extends Component {
 		);
 	}
 }
+
+Sidebar.propTypes = {
+	data: PropTypes.object.isRequired,
+};
+
+
+export default Sidebar;

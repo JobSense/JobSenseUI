@@ -5,8 +5,6 @@ import styles from './EngagementChart.css';
 class EngagementChart extends Component {
 	render() {
 		const { data } = this.props;
-		const talentPoolAveragePercentage = (data.average * 180 / data.max) - 90;
-		const rotateNumber = 'rotate('+talentPoolAveragePercentage+'deg)';
 
 		return (
 			<div className={styles.container}>

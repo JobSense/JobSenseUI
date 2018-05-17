@@ -46,12 +46,11 @@ class IndexPage extends React.Component {
 			maxSalary: 0,
 		},
 		response: {
-			// response
 			talentPool: {
 				prediction: {
 					min: 20,
-					max: 5000,
-					median: 1000,
+					max: 3000,
+					median: 2000,
 					toShow: true,
 				},
 			},
@@ -84,13 +83,14 @@ class IndexPage extends React.Component {
 		},
 	};
 	render() {
+		console.log(this.state);
 		return (
 			<AppContext.Provider value={this.state}>
 				<div className={styles.container}>
 					<Header />
 					<div className={styles.formContainer}>
 						<DataConsumer>
-							<PreviewHeader />
+							<PreviewHeader data={this.state}/>
 							<JobDetails />
 							<JobRequirements />
 							<JobDescription />
@@ -99,7 +99,7 @@ class IndexPage extends React.Component {
 					</div>
 				</div>
 				<div className={styles.sideBar}>
-					<Sidebar />
+						<Sidebar data={this.state}/>
 				</div>
 			</AppContext.Provider>
 		);

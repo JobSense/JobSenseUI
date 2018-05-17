@@ -5,9 +5,9 @@ import styles from './TalentPoolChart.css';
 class TalentPoolChart extends Component {
 	render() {
 		const { data } = this.props;
-		const talentPoolAveragePercentage = (data.average * 180 / data.max) - 90;
+		const talentPoolAveragePercentage = (data.median * 180 / data.max) - 90;
 		const rotateNumber = 'rotate('+talentPoolAveragePercentage+'deg)';
-
+		console.log(data);
 		return (
 			<div className={styles.container}>
 				<div className={styles.chart}>
