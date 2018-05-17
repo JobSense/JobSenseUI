@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextEditor from '../../components/TextEditor/TextEditor';
 import styles from './JobDescription.css';
 
 export default class JobDescription extends Component {
@@ -35,11 +36,7 @@ export default class JobDescription extends Component {
 									</div>
 								</fieldset>
 								<div className="form-group">
-									<img
-										src="//dna.jsstatic.com/img/siva/job-description.jpg"
-										width="900"
-										className="img-responsive"
-									/>
+                                    <TextEditor></TextEditor>
 									<span className="help-block" style={{ display: 'none' }}>
 										Job Description is required with minimal 300 characters
 									</span>
