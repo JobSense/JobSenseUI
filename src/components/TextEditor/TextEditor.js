@@ -22,7 +22,6 @@ export default class TextEditor extends Component {
 	};
 
 	onChange = evt => {
-		this.props.onChange(evt);
 		var newContent = evt.editor.getData();
 		this.setState({
 			content: newContent,
@@ -30,6 +29,7 @@ export default class TextEditor extends Component {
 	};
 
 	onBlur = evt => {
+		this.props.onChange(evt);
 		console.log('onBlur event called with event info: ', evt);
 	};
 

@@ -37,7 +37,7 @@ export default class JobDescription extends Component {
 								</fieldset>
 								<div className="form-group">
 									<TextEditor
-										onChange={val => {
+										onBlur={val => {
 											this.props.onChange(
 												'job_description',
 												val.editor.getData()
