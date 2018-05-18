@@ -32,28 +32,37 @@ class SalaryBar extends Component {
 			100}% - (${graphWidth} * ${maxGraphClamped}))`;
 		const maxTagPos = `${maxGraphClamped * 100}%`;
 
-		const graphRange = `${(maxGraphClamped - minGraphClamped)*100}%`;
+		const graphRange =
+			(maxGraphClamped - minGraphClamped) * 100 > 0
+				? `${(maxGraphClamped - minGraphClamped) * 100}%`
+				: 0;
 
 		return (
 			<div>
-				<div className={styles.coverLeft}/>
+				<div className={styles.coverLeft} />
 				<div className={styles.graphDetails}>
-
 					<div
 						className={`${styles.graphAverage} ${styles.graphAverageMin}`}
 						style={{ marginLeft: minGraphPos }}
 					>
 						MIN {currency} {minSalaryInput}
-						<span
-							className={styles.graphTagMin}
-							style={{ left: minTagPos }}
-						/>
+						<span className={styles.graphTagMin} style={{ left: minTagPos }} />
 					</div>
 					<div className={styles.graphBar}>
-						<div className={styles.graphRange} style={{ marginLeft: minTagPos , width: graphRange }}/>
+						<div
+							className={styles.graphRange}
+							style={{ marginLeft: minTagPos, width: graphRange }}
+						/>
 						<div className={styles.graphLabel}>
-							<div className={styles.graphLabelMin}>{currency} {salaryInsight.min}</div>
-							<div className={styles.graphLabelMax}>{currency} {salaryInsight.max}</div>
+							<div className={styles.graphLabelMin}>
+								{currency} {salaryInsight.min}
+							</div>
+							<div className={styles.salaryBarLabel}>
+								Salary range for similar positions
+							</div>
+							<div className={styles.graphLabelMax}>
+								{currency} {salaryInsight.max}
+							</div>
 						</div>
 					</div>
 					<div
@@ -61,23 +70,10 @@ class SalaryBar extends Component {
 						style={{ marginLeft: maxGraphPos }}
 					>
 						MAX {currency} {maxSalaryInput}
-						<span
-							className={styles.graphTagMax}
-							style={{ left: maxTagPos }}
-						/>
+						<span className={styles.graphTagMax} style={{ left: maxTagPos }} />
 					</div>
-
-					{/* <div className={styles.graphMin}>
-						<span className={styles.graphLabel}>MIN</span>
-						{currency} {salaryInsight.min}
-					</div>
-
-					<div className={styles.graphMax}>
-						<span className={styles.graphLabel}>MAX</span>
-						{currency} {salaryInsight.max}
-					</div> */}
 				</div>
-				<div className={styles.coverRight}/>
+				<div className={styles.coverRight} />
 			</div>
 		);
 	}
