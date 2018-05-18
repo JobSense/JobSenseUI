@@ -49,8 +49,14 @@ class IndexPage extends React.Component {
 			mandatory_skill_keyword: '', // was array
 			job_monthly_salary_min: 0,
 			job_monthly_salary_max: 0,
-
+			job_posting_date_start_diff: 266,
+			job_posting_date_end_diff: 296,
 			//Fields i dk
+			job_industry: '', //hardcode
+			job_requirement: '',
+			company_name: 'Facebook',
+			company_size: '1 - 50 Employees',
+			company_location_string: 'Kuala Lumpur',
 			job_auto_forwarded_flag: false,
 			job_internship_flag: false,
 			company_recruitment_firm_flag: false,
