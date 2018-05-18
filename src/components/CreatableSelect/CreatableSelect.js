@@ -13,8 +13,8 @@ class CreatableInputOnly extends Component {
 	};
 
 	handleChange = value => {
-		this.setState({ value });
 		this.props.onChange(value);
+		this.setState({ value });
 	};
 
 	handleInputChange = inputValue => {
@@ -30,6 +30,7 @@ class CreatableInputOnly extends Component {
 				console.group('Value Added');
 				console.log(value);
 				console.groupEnd();
+				this.props.onChange(value);
 				this.setState({
 					inputValue: '',
 					value: [...value, createOption(inputValue)],

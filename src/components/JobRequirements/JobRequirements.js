@@ -97,6 +97,7 @@ export default class JobDetails extends Component {
 									<div className="col-sm-10">
 										<CreatableSelect
 											onChange={val => {
+												console.log('changing');
 												onChange(
 													'mandatory_skill_keyword',
 													val.map(val => val.value).join(',')

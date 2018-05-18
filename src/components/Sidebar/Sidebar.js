@@ -23,62 +23,90 @@ class Sidebar extends Component {
 		const { data } = this.props;
 		const responseData = data && data.response;
 
-		const applyEngagementData ={
+		const applyEngagementData = {
 			label: 'Apply',
-			...responseData && responseData.applies.prediction
+			...(responseData && responseData.insights.applies),
 		};
 
-		const clickEngagementData ={
+		const clickEngagementData = {
 			label: 'Click',
-			...responseData && responseData.clicks.prediction
+			...(responseData && responseData.insights.clicks),
 		};
 
 		const talentPoolData = {
-			...responseData && responseData.talentPool.prediction
+			...(responseData && responseData.insights.talentPool),
 		};
 
 		const { expanded } = this.state;
 		return (
 			<div>
-				<div className={`${styles.container} ${expanded ? styles.showContent : styles.hideContent}`}>
+				<div
+					className={`${styles.container} ${
+						expanded ? styles.showContent : styles.hideContent
+					}`}
+				>
 					<div className={styles.widgetWrap}>
-						<div className={`${styles.widgetBox} ${expanded ? styles.noCollapseTitle : styles.collapseTitle}`}>
+						<div
+							className={`${styles.widgetBox} ${
+								expanded ? styles.noCollapseTitle : styles.collapseTitle
+							}`}
+						>
 							<div className={`${styles.title}`}>JobSense</div>
 						</div>
-						<div className={`${styles.widgetContainer} ${expanded ? styles.showItem : styles.hideItem}`}>
+						<div
+							className={`${styles.widgetContainer} ${
+								expanded ? styles.showItem : styles.hideItem
+							}`}
+						>
 							<div className={styles.widgetBox}>
 								<div className={styles.widgetTitle}>Talent Pool</div>
-								<TalentPoolChart data={talentPoolData}/>
+								<TalentPoolChart data={talentPoolData} />
 								<div className={styles.desc}>
-									<div>Talent pool is the potential number of potential talents that can reach based on your job description.</div>
+									<div>
+										Talent pool is the potential number of potential talents
+										that can reach based on your job description.
+									</div>
 								</div>
 							</div>
 							<div className={styles.widgetBox}>
 								<div className={styles.widgetTitle}>Engagements</div>
-								<EngagementChart data={applyEngagementData}/>
-								<EngagementChart data={clickEngagementData}/>
+								<EngagementChart data={applyEngagementData} />
+								<EngagementChart data={clickEngagementData} />
 								<div className={`${styles.desc} ${styles.descEngagement}`}>
-									<div>Engagement is the potential number of candidates that will click on your ads (View) and apply to your ads (Applications).</div>
+									<div>
+										Engagement is the potential number of candidates that will
+										click on your ads (View) and apply to your ads
+										(Applications).
+									</div>
 								</div>
 							</div>
 						</div>
-						<div className={`${styles.widgetContainer} ${expanded ? styles.hideItem : styles.showItem}`}>
+						<div
+							className={`${styles.widgetContainer} ${
+								expanded ? styles.hideItem : styles.showItem
+							}`}
+						>
 							<div className={styles.widgetBox}>
 								<div className={styles.widgetTitleCollapse}>Talent Pool</div>
-								<span className={'material-icons'}>people</span>{talentPoolData.min} - {talentPoolData.max}
+								<span className={'material-icons'}>people</span>
+								{talentPoolData.min} - {talentPoolData.max}
 							</div>
 							<div className={styles.widgetBox}>
 								<div className={styles.widgetTitleCollapse}>Applies</div>
-								<span className={'material-icons'}>contacts</span>{applyEngagementData.min} - {applyEngagementData.max}
+								<span className={'material-icons'}>contacts</span>
+								{applyEngagementData.min} - {applyEngagementData.max}
 							</div>
 							<div className={styles.widgetBox}>
 								<div className={styles.widgetTitleCollapse}>Clicks</div>
-								<span className={'material-icons'}>touch_app</span>{clickEngagementData.min} - {clickEngagementData.max}
+								<span className={'material-icons'}>touch_app</span>
+								{clickEngagementData.min} - {clickEngagementData.max}
 							</div>
 						</div>
 					</div>
 					<div className={styles.expandButton} onClick={this.handleExpand}>
-						<span className={'material-icons'}>{expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}</span>
+						<span className={'material-icons'}>
+							{expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+						</span>
 					</div>
 				</div>
 			</div>
@@ -89,6 +117,5 @@ class Sidebar extends Component {
 Sidebar.propTypes = {
 	data: PropTypes.object.isRequired,
 };
-
 
 export default Sidebar;

@@ -4,11 +4,13 @@ import styles from './EngagementChart.css';
 
 class EngagementChart extends Component {
 	render() {
-		const { data: { max, min, median, label } } = this.props;
+		const { data: { max, min, median, label, toShow } } = this.props;
 
 		const percentage = Math.round(median / (max - min) * 100, 0) || 0;
+
 		return (
 			<div className={styles.container}>
+				{!toShow && <div className={styles.overlay}>Not Available</div>}
 				<div className={styles.chart}>
 					<div className={styles.labelTitle}>{label}</div>
 					<div className={styles.bar}>
@@ -17,7 +19,7 @@ class EngagementChart extends Component {
 							style={{ maxWidth: `${percentage}%` }}
 							className={styles.barOuter}
 						>
-							<span className={styles.value}>{percentage}%</span>
+							<span className={styles.value}>{Math.round(median, 0)}</span>
 						</div>
 					</div>
 					<div className={styles.rangeValueContainer}>

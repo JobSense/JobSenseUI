@@ -7,8 +7,14 @@ class TalentPoolChart extends Component {
 		const { data } = this.props;
 		const talentPoolAveragePercentage = data.median * 180 / data.max - 90;
 		const rotateNumber = 'rotate(' + talentPoolAveragePercentage + 'deg)';
+		const { toShow } = data;
 		return (
 			<div className={styles.container}>
+				{!toShow && (
+					<div className={styles.padding}>
+						<div className={styles.overlay}>Not Available</div>
+					</div>
+				)}
 				<div className={styles.chart}>
 					<div className={styles.semicircle} />
 					<div style={{ transform: rotateNumber }} className={styles.pointer} />

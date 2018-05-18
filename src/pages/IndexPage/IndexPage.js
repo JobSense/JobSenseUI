@@ -38,23 +38,24 @@ class IndexPage extends React.Component {
 			job_description: '',
 			job_title: '',
 			job_employment_type: '',
-			job_seniority_level: '',
-			job_specializations_string: '',
+			job_seniority_level: 'Junior Executive',
+			job_specializations_string: 'IT/Computer - Software',
 			job_roles_string: '',
-			job_work_locations_string: '', // was array
+			job_work_locations_string: 'Kuala Lumpur', // was array
 			job_salary_visible: false,
 			qualification_code_string: '', // was array
-			field_of_study: '', // was array
-			years_of_experience: 0,
+			field_of_study:
+				'Bachelor\'s Degree/Post Graduate Diploma/Professional Degree', // was array
+			years_of_experience: 2,
 			mandatory_skill_keyword: '', // was array
 			job_monthly_salary_min: 0,
 			job_monthly_salary_max: 0,
 			job_posting_date_start_diff: 266,
 			job_posting_date_end_diff: 296,
 			//Fields i dk
-			job_industry: '', //hardcode
+			job_industry: 'Computer / Information Technology (Software)', //hardcode
 			job_requirement: '',
-			company_name: 'Facebook',
+			company_name: 'Global Delivery Pod',
 			company_size: '1 - 50 Employees',
 			company_location_string: 'Kuala Lumpur',
 			job_auto_forwarded_flag: false,
@@ -123,7 +124,7 @@ class IndexPage extends React.Component {
 						this.controller = new AbortController();
 						const signal = this.controller.signal;
 						const res = await fetch(
-							'http://hackathon-jobsense-service-staging.ap-southeast-1.elasticbeanstalk.com/predictions/job-ad-performance',
+							'http://hackathon-jobsense-service-2-staging.ap-southeast-1.elasticbeanstalk.com/predictions/job-ad-performance',
 							{
 								method: 'POST',
 								body: JSON.stringify({ ...this.state.values }),
