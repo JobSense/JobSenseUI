@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4474b99-8c5a-481c-aafc-231c36b4e192" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/EngagementChart/EngagementChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EngagementChart/EngagementChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TalentPoolChart.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TalentPoolChart.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            <state relative-caret-position="357">
+              <caret line="24" column="87" selection-start-line="24" selection-start-column="87" selection-end-line="24" selection-end-column="87" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -95,7 +91,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sidebar.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sidebar.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Sidebar/Sidebar.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="249">
@@ -196,9 +192,9 @@
         <option value="$PROJECT_DIR$/src/components/EngagementChart/EngagementChart.css" />
         <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.css" />
-        <option value="$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.js" />
         <option value="$PROJECT_DIR$/src/components/EngagementChart/EngagementChart.js" />
         <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.css" />
+        <option value="$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.js" />
       </list>
     </option>
   </component>
@@ -341,7 +337,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49402000" />
+    <option name="totallyTimeSpent" value="49451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="804" extended-state="6" />
@@ -733,16 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="4" column="41" lean-forward="true" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/EngagementChart/EngagementChart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -757,6 +743,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TalentPoolChart/TalentPoolChart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="87" selection-start-line="24" selection-start-column="87" selection-end-line="24" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -22,7 +22,7 @@ class TalentPoolChart extends Component {
 					<div className={styles.pointerDot} />
 					<div className={styles.rangeValueContainer}>
 						<span className={styles.minNumber}>{Math.round(data.min, 0)}</span>
-						<span className={styles.mediamValue}>{medianValue}</span>
+						<span className={styles.mediamValue}>{medianValue !==0 ? medianValue : null}</span>
 						<span className={styles.maxNumber}>{Math.round(data.max, 0)}</span>
 					</div>
 				</div>
