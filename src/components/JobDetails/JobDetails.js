@@ -27,11 +27,13 @@ export default class JobDetails extends Component {
 	};
 
 	salaryChangeMin = e => {
-		e.target.value && this.props.onChange('job_monthly_salary_min', parseInt(e.target.value));
+		const value = e.target.value || 0;
+		this.props.onChange('job_monthly_salary_min', parseInt(value));
 	};
 
 	salaryChangeMax = e => {
-		e.target.value && this.props.onChange('job_monthly_salary_max', parseInt(e.target.value));
+		const value = e.target.value || 0;
+		this.props.onChange('job_monthly_salary_max', parseInt(value));
 	};
 
 	render() {

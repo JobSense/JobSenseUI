@@ -81,6 +81,8 @@
   width: 100%;
   position: relative;
   bottom: 25px;
+  display:flex;
+  justify-content: space-between;
 }
 
 .graphLabelMin {
@@ -101,6 +103,11 @@
   font-size: 12px;
   line-height: 2.5rem;
   z-index: 99;
+}
+
+.salaryBarLabel {
+  color: #6476a1;
+  line-height: 2.5rem;
 }
 
 .minDetails {
