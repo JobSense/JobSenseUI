@@ -51,7 +51,7 @@
 }
 
 .desc {
-    padding: 40px 0 0;
+    padding-top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,7 @@
 }
 
 .descEngagement {
-    padding-top: 0px;
+    padding-top: 5px;
 }
 
 .hideContent {

@@ -179,3 +179,12 @@
 .padding {
     width: 85%;
 }
+
+.mediamValue {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    font-size: 10px;
+    color: #18ca6c;
+}

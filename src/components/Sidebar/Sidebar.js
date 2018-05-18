@@ -67,8 +67,8 @@ class Sidebar extends Component {
 							</div>
 							<div className={styles.widgetBox}>
 								<div className={styles.widgetTitle}>Engagements</div>
-								<EngagementChart data={applyEngagementData} />
 								<EngagementChart data={clickEngagementData} />
+								<EngagementChart data={applyEngagementData} />
 								<div className={`${styles.desc} ${styles.descEngagement}`}>
 									<div>Engagement is the potential number of candidates that will click on your ads and apply to your ads.</div>
 								</div>

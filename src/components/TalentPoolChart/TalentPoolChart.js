@@ -6,13 +6,14 @@ class TalentPoolChart extends Component {
 	render() {
 		const { data } = this.props;
 		const talentPoolAveragePercentage = data.median * 180 / data.max - 90;
-		const rotateNumber = 'rotate(' + talentPoolAveragePercentage + 'deg)';
+		const medianValue = data.median || 0;
+		const rotateNumber = data.toShow ? 'rotate(' + talentPoolAveragePercentage + 'deg)' : 'rotate(-90deg)';
 		const { toShow } = data;
 		return (
 			<div className={styles.container}>
 				{!toShow && (
 					<div className={styles.padding}>
-						<div className={styles.overlay}>Not Available</div>
+						<div className={styles.overlay}>Results are unavailable</div>
 					</div>
 				)}
 				<div className={styles.chart}>
@@ -21,6 +22,7 @@ class TalentPoolChart extends Component {
 					<div className={styles.pointerDot} />
 					<div className={styles.rangeValueContainer}>
 						<span className={styles.minNumber}>{Math.round(data.min, 0)}</span>
+						<span className={styles.mediamValue}>{medianValue}</span>
 						<span className={styles.maxNumber}>{Math.round(data.max, 0)}</span>
 					</div>
 				</div>

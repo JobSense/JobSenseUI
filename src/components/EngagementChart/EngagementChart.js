@@ -22,7 +22,7 @@ class EngagementChart extends Component {
 							style={{ maxWidth: `${percentage}%` }}
 							className={styles.barOuter}
 						>
-							<span className={!toShow ? styles.notAvailableValue : styles.value}>{!toShow ? 'Not Available' : Math.round(medianValue, 0)}</span>
+							<span className={!toShow ? styles.notAvailableValue : styles.value}>{!toShow ? 'Results are unavailable' : Math.round(medianValue, 0)}</span>
 						</div>
 					</div>
 					<div className={styles.rangeValueContainer}>
