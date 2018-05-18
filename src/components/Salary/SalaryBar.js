@@ -45,9 +45,9 @@ class SalaryBar extends Component {
 			<div>
 				<div className={styles.coverLeft}/>
 				<div className={styles.graphDetails}>
-					
+
 					<div
-						className={styles.graphAverage}
+						className={`${styles.graphAverage} ${styles.graphAverageMin}`}
 						style={{ marginLeft: minGraphPos }}
 					>
 						MIN {currency} {minSalaryInput}
@@ -64,7 +64,7 @@ class SalaryBar extends Component {
 						</div>
 					</div>
 					<div
-						className={styles.graphAverage}
+						className={`${styles.graphAverage} ${styles.graphAverageMax}`}
 						style={{ marginLeft: maxGraphPos }}
 					>
 						MAX {currency} {maxSalaryInput}
@@ -73,7 +73,7 @@ class SalaryBar extends Component {
 							style={{ left: maxTagPos }}
 						/>
 					</div>
-					
+
 					{/* <div className={styles.graphMin}>
 						<span className={styles.graphLabel}>MIN</span>
 						{currency} {salaryInsight.min}

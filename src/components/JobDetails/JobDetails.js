@@ -131,7 +131,7 @@ export default class JobDetails extends Component {
 								</div>
 
 								{job_specializations_string && (
-									<div className="form-group">
+									<div className={`form-group ${styles.selectBox}`}>
 										<label
 											className="col-sm-2 control-label"
 											htmlFor="Job Specialization"
