@@ -27,11 +27,11 @@ export default class JobDetails extends Component {
 	};
 
 	salaryChangeMin = e => {
-		this.props.onChange('job_monthly_salary_min', parseInt(e.target.value));
+		e.target.value && this.props.onChange('job_monthly_salary_min', parseInt(e.target.value));
 	};
 
 	salaryChangeMax = e => {
-		this.props.onChange('job_monthly_salary_max', parseInt(e.target.value));
+		e.target.value && this.props.onChange('job_monthly_salary_max', parseInt(e.target.value));
 	};
 
 	render() {
@@ -380,11 +380,11 @@ export default class JobDetails extends Component {
 									</div>
 								</div>
 
-								<SalaryBar
+								{salary.toShow && <SalaryBar
 									salaryInsight={salary}
 									minSalaryInput={job_monthly_salary_min}
 									maxSalaryInput={job_monthly_salary_max}
-								/>
+								/>}
 
 								<div className="form-group">
 									<div className="col-sm-offset-2 col-sm-10">
