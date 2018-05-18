@@ -15,13 +15,6 @@ class SalaryBar extends Component {
 			currency,
 		} = this.props;
 		const graphWidth = '11.5rem'; // From CSS
-		// const averageScale =
-		// 	(salaryInsightInput - salaryInsight.min) /
-		// 	(salaryInsight.max - salaryInsight.min);
-		// const graphClamped = Math.min(Math.max(0, averageScale), 1);
-		// const graphPos = `calc(${graphClamped *
-		// 	100}% - (${graphWidth} * ${graphClamped}))`;
-		// const tagPos = `${graphClamped * 100}%`;
 
 		const minAverageScale =
 			(minSalaryInput - salaryInsight.min) /
@@ -92,6 +85,8 @@ class SalaryBar extends Component {
 
 SalaryBar.propTypes = {
 	salaryInsight: PropTypes.object.isRequired,
+	minSalaryInput: PropTypes.number,
+	maxSalaryInput: PropTypes.number,
 	currency: PropTypes.string.isRequired,
 };
 
