@@ -6,7 +6,7 @@ class TalentPoolChart extends Component {
 	render() {
 		const { data } = this.props;
 		const talentPoolAveragePercentage = data.median * 180 / data.max - 90;
-		const rotateNumber = 'rotate(' + talentPoolAveragePercentage + 'deg)';
+		const rotateNumber = data.toShow ? 'rotate(' + talentPoolAveragePercentage + 'deg)' : 'rotate(-90deg)';
 		const { toShow } = data;
 		return (
 			<div className={styles.container}>
