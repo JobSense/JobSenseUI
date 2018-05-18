@@ -167,16 +167,13 @@
 
 .overlay {
     position: relative;
-    /* Sit on top of the page content */
-    background-color: grey;
     text-align: center;
     width: 100%;
-    color: white;
+    color: #ef645f;
+    font-size: 12px;
+    top: 93px;
     padding: 4.5px;
-    /* Black background with opacity */
-    z-index: 2;
-    /* Specify a stack order in case you're using a different order for other elements */
-    /* Add a pointer on hover */
+    z-index: 9;
 }
 
 .padding {

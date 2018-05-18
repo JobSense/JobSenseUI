@@ -54,8 +54,19 @@
 }
 
 .value {
-    padding-left: 10px;
-    font-size: 14px;
+    padding-left: 6px;
+    padding-top: 1px;
+    font-size: 10px;
+    position: fixed;
+    color: #424242;
+}
+
+.notAvailableValue {
+    padding-left: 6px;
+    padding-top: 1px;
+    font-size: 10px;
+    position: fixed;
+    color: #a91111;
 }
 
 .rangeValueContainer {

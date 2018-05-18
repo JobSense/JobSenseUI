@@ -10,7 +10,6 @@ class EngagementChart extends Component {
 
 		return (
 			<div className={styles.container}>
-				{!toShow && <div className={styles.overlay}>Not Available</div>}
 				<div className={styles.chart}>
 					<div className={styles.labelTitle}>{label}</div>
 					<div className={styles.bar}>
@@ -19,7 +18,7 @@ class EngagementChart extends Component {
 							style={{ maxWidth: `${percentage}%` }}
 							className={styles.barOuter}
 						>
-							<span className={styles.value}>{Math.round(median, 0)}</span>
+							<span className={!toShow ? styles.notAvailableValue : styles.value}>{!toShow ? 'Not Available' : Math.round(median, 0)}</span>
 						</div>
 					</div>
 					<div className={styles.rangeValueContainer}>
