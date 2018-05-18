@@ -124,7 +124,7 @@ class IndexPage extends React.Component {
 						this.controller = new AbortController();
 						const signal = this.controller.signal;
 						const res = await fetch(
-							'http://hackathon-jobsense-service-2-staging.ap-southeast-1.elasticbeanstalk.com/predictions/job-ad-performance',
+							'http://hackathon-jobsense-service-3-staging.ap-southeast-1.elasticbeanstalk.com/predictions/job-ad-performance',
 							{
 								method: 'POST',
 								body: JSON.stringify({ ...this.state.values }),
