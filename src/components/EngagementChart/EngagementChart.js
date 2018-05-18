@@ -19,12 +19,12 @@ class EngagementChart extends Component {
 							style={{ maxWidth: `${percentage}%` }}
 							className={styles.barOuter}
 						>
-							<span className={styles.value}>{Math.round(median, 0)}</span>
+							<span className={styles.value}>{isNaN(Math.round(median, 0)) && 0}</span>
 						</div>
 					</div>
 					<div className={styles.rangeValueContainer}>
-						<span>{Math.round(min, 0)}</span>
-						<span>{Math.round(max, 0)}</span>
+						<span>{isNaN(Math.round(min, 0)) && 0}</span>
+						<span>{isNaN(Math.round(max, 0)) && 0}</span>
 					</div>
 				</div>
 			</div>
