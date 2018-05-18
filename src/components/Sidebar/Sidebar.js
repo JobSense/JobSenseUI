@@ -62,10 +62,7 @@ class Sidebar extends Component {
 								<div className={styles.widgetTitle}>Talent Pool</div>
 								<TalentPoolChart data={talentPoolData} />
 								<div className={styles.desc}>
-									<div>
-										Talent pool is the potential number of potential talents
-										that can reach based on your job description.
-									</div>
+									<div>Talent pool is the potential number of talents that can be reached based on your job ads information.</div>
 								</div>
 							</div>
 							<div className={styles.widgetBox}>
@@ -73,11 +70,7 @@ class Sidebar extends Component {
 								<EngagementChart data={applyEngagementData} />
 								<EngagementChart data={clickEngagementData} />
 								<div className={`${styles.desc} ${styles.descEngagement}`}>
-									<div>
-										Engagement is the potential number of candidates that will
-										click on your ads (View) and apply to your ads
-										(Applications).
-									</div>
+									<div>Engagement is the potential number of candidates that will click on your ads and apply to your ads.</div>
 								</div>
 							</div>
 						</div>
