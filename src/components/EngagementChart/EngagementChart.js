@@ -6,7 +6,11 @@ class EngagementChart extends Component {
 	render() {
 		const { data: { max, min, median, label, toShow } } = this.props;
 
-		const percentage = Math.round(median / (max - min) * 100, 0) || 0;
+		const minValue = min || 0;
+		const maxValue = max || 0;
+		const medianValue = median || 0;
+
+		const percentage = Math.round(medianValue / (maxValue - minValue) * 100, 0) || 0;
 
 		return (
 			<div className={styles.container}>
@@ -18,12 +22,12 @@ class EngagementChart extends Component {
 							style={{ maxWidth: `${percentage}%` }}
 							className={styles.barOuter}
 						>
-							<span className={!toShow ? styles.notAvailableValue : styles.value}>{!toShow ? 'Not Available' : Math.round(median, 0)}</span>
+							<span className={!toShow ? styles.notAvailableValue : styles.value}>{!toShow ? 'Not Available' : Math.round(medianValue, 0)}</span>
 						</div>
 					</div>
 					<div className={styles.rangeValueContainer}>
-						<span>{Math.round(min, 0)}</span>
-						<span>{Math.round(max, 0)}</span>
+						<span>{Math.round(minValue, 0)}</span>
+						<span>{Math.round(maxValue, 0)}</span>
 					</div>
 				</div>
 			</div>

@@ -38,10 +38,10 @@ class IndexPage extends React.Component {
 			job_description: '',
 			job_title: '',
 			job_employment_type: '',
-			job_seniority_level: 'Junior Executive',
-			job_specializations_string: 'IT/Computer - Software',
+			job_seniority_level: '',
+			job_specializations_string: '',
 			job_roles_string: '',
-			job_work_locations_string: 'Kuala Lumpur', // was array
+			job_work_locations_string: '', // was array
 			job_salary_visible: false,
 			qualification_code_string: '', // was array
 			field_of_study:
@@ -124,7 +124,7 @@ class IndexPage extends React.Component {
 						this.controller = new AbortController();
 						const signal = this.controller.signal;
 						const res = await fetch(
-							'http://hackathon-jobsense-service-2-staging.ap-southeast-1.elasticbeanstalk.com/predictions/job-ad-performance',
+							'http://hackathon-jobsense-service-4-staging.ap-southeast-1.elasticbeanstalk.com/predictions/job-ad-performance',
 							{
 								method: 'POST',
 								body: JSON.stringify({ ...this.state.values }),
